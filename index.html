@@ -4,681 +4,973 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CELL WORLD – Biologie Lernwelt</title>
+<title>CELL WORLD – Membrantransport</title>
+
 <style>
 :root {
-  --bg:#071827;
-  --panel:#10283b;
-  --panel2:#15364b;
-  --text:#eef7fb;
-  --muted:#a9c1cf;
-  --cyan:#55dfd2;
-  --blue:#66a9ff;
-  --gold:#f6bd60;
-  --purple:#a78bfa;
-  --pink:#f28bb7;
-  --line:#2b4a60;
+  --bg:#07111f;
+  --panel:#101f32;
+  --panel2:#172b42;
+  --text:#f2f6fc;
+  --muted:#a9bbce;
+  --cyan:#42d9e8;
+  --orange:#ffad5c;
+  --green:#7de0a3;
+  --pink:#ff779c;
 }
-*{box-sizing:border-box}
-body{
+* {box-sizing:border-box}
+body {
   margin:0;
-  background:radial-gradient(circle at 80% 0,#16445a 0,transparent 35%),var(--bg);
+  background:var(--bg);
   color:var(--text);
-  font:16px/1.55 system-ui,sans-serif;
+  font-family:Arial, sans-serif;
 }
-button{font:inherit;cursor:pointer;color:inherit}
-.wrap{max-width:1150px;margin:auto;padding:20px}
-.hero{
-  padding:36px 25px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:linear-gradient(120deg,#12364c,#145b61);
+header {
+  padding:24px 5%;
+  background:linear-gradient(120deg,#102b48,#102039);
+  border-bottom:1px solid #28435e;
 }
-.eyebrow{
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:.75rem;
-  color:#b8f6ee;
+.logo {
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:3px;
 }
-.hero h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1;margin:12px 0}
-.hero p{max-width:650px;color:#e0f5f5}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.chip{border:1px solid #ffffff44;border-radius:99px;padding:5px 11px;font-size:.8rem}
-.layout{display:grid;grid-template-columns:250px 1fr;gap:18px;margin-top:20px}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}
-.navlist{display:grid;gap:7px}
-.nav button,.action,.answer{
-  border:1px solid var(--line);
-  background:#102d42;
-  border-radius:11px;
-  padding:10px 12px;
+.logo span {color:var(--cyan)}
+header p {color:var(--muted);margin-bottom:0}
+main {max-width:1500px;margin:auto;padding:24px}
+.intro {
+  padding:24px;
+  background:var(--panel);
+  border:1px solid #29435d;
+  border-radius:18px;
+  margin-bottom:22px;
+}
+.intro h1 {margin-top:0;font-size:26px}
+.intro p {color:var(--muted);line-height:1.7}
+.layout {
+  display:grid;
+  grid-template-columns:260px minmax(0,1fr);
+  gap:20px;
+}
+nav {
+  background:var(--panel);
+  border:1px solid #29435d;
+  border-radius:18px;
+  padding:15px;
+  height:fit-content;
+}
+nav h3 {
+  color:var(--cyan);
+  font-size:13px;
+  letter-spacing:1px;
+  margin:12px 8px;
+}
+.navbtn {
+  width:100%;
+  border:0;
+  background:transparent;
+  color:var(--muted);
   text-align:left;
+  padding:13px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:14px;
+  margin:3px 0;
 }
-.nav button.active,.action.primary{background:#164c55;border-color:var(--cyan)}
-.nav button small{display:block;color:var(--muted);font-size:.72rem}
-.lesson h2{font-size:clamp(1.5rem,4vw,2.2rem)}
-.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem}
-.lead{color:#c5d9e3}
-.diagram{margin:18px 0;padding:10px;background:#091d2c;border:1px solid var(--line);border-radius:16px}
-.diagram svg{width:100%;height:auto;display:block}
-.legend{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.8rem}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
-.content h3{font-size:1.08rem;margin:20px 0 7px}
-.content p,.content li{color:#d4e3eb}
-.step{background:#122f43;border-left:3px solid var(--cyan);border-radius:0 10px 10px 0;padding:10px 13px;margin:9px 0}
-.callout{padding:13px;border:1px solid #46746f;background:#103b3c;border-radius:12px;margin:14px 0}
-.controls{display:flex;gap:9px;margin-top:20px}
-.controls button{flex:1}
-.quiz{margin-top:20px}
-.answer{display:block;width:100%;margin:8px 0}
-.answer.correct{border-color:#58d69c;background:#123c35}
-.answer.wrong{border-color:#f28b87;background:#472b32}
-.muted{color:var(--muted)}
-footer{text-align:center;color:var(--muted);font-size:.8rem;padding:25px}
-@media(max-width:760px){
-  .wrap{padding:12px}
-  .layout{grid-template-columns:1fr}
-  .navlist{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nav button{font-size:.82rem}
+.navbtn:hover,.navbtn.active {
+  background:#203c58;
+  color:white;
+}
+.navbtn.active {border-left:3px solid var(--cyan)}
+.content {min-width:0}
+.heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+.heading h2 {margin:0;font-size:25px}
+.tag {
+  color:var(--cyan);
+  border:1px solid #287b8b;
+  padding:6px 11px;
+  border-radius:20px;
+  font-size:12px;
+}
+.viewer {
+  position:relative;
+  height:510px;
+  background:radial-gradient(circle at center,#1b3852,#091523 75%);
+  border:1px solid #29435d;
+  border-radius:18px;
+  overflow:hidden;
+}
+#scene {
+  width:100%;
+  height:100%;
+  display:block;
+  touch-action:none;
+}
+.viewer-help {
+  position:absolute;
+  left:14px;
+  bottom:12px;
+  background:#07111fbb;
+  padding:9px 12px;
+  border-radius:8px;
+  color:#c5d7e8;
+  font-size:12px;
+  pointer-events:none;
+}
+.controls {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0 22px;
+}
+.control {
+  background:var(--panel2);
+  color:white;
+  border:1px solid #36516d;
+  padding:10px 14px;
+  border-radius:9px;
+  cursor:pointer;
+}
+.control:hover {background:#294765}
+.info-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.card {
+  background:var(--panel);
+  border:1px solid #29435d;
+  border-radius:15px;
+  padding:20px;
+  line-height:1.7;
+}
+.card h3 {margin-top:0;color:var(--cyan)}
+.card p {color:#d1deeb}
+.card ul {padding-left:20px;color:#d1deeb}
+.card li {margin-bottom:8px}
+.full {grid-column:1/-1}
+.term {
+  color:var(--orange);
+  font-weight:bold;
+}
+.highlight {
+  border-left:3px solid var(--green);
+  padding:12px 15px;
+  background:#15352e;
+  border-radius:7px;
+  margin-top:13px;
+  color:#d9f7e5;
+}
+.legend {
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin:12px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+.dot {
+  display:inline-block;
+  width:10px;height:10px;
+  border-radius:50%;
+  margin-right:5px;
+}
+footer {
+  text-align:center;
+  color:#738ba3;
+  padding:35px 10px;
+  font-size:12px;
+}
+@media(max-width:850px) {
+  .layout {grid-template-columns:1fr}
+  nav {display:grid;grid-template-columns:1fr 1fr}
+  nav h3 {grid-column:1/-1}
+  .viewer {height:400px}
+}
+@media(max-width:550px) {
+  main {padding:13px}
+  .info-grid {grid-template-columns:1fr}
+  .full {grid-column:auto}
+  nav {grid-template-columns:1fr}
+  .viewer {height:340px}
+  .heading h2 {font-size:21px}
 }
 </style>
-</head>
-<body>
-<main class="wrap">
 
-<header class="hero">
-  <div class="eyebrow">Interaktive Biologie-Lernwelt</div>
-  <h1>CELL WORLD</h1>
-  <p>
-    Reise durch die Zellmembran und entdecke, wie Stoffe
-    die Zelle betreten und verlassen – von einfacher
-    Diffusion bis zum energieabhängigen Transport.
-  </p>
-  <div class="chips">
-    <span class="chip">9 Lernstationen</span>
-    <span class="chip">Membranmodelle</span>
-    <span class="chip">ATP & Energie</span>
-    <span class="chip">Wissensquiz</span>
-  </div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CELL <span>WORLD</span></div>
+  <p>Eine interaktive 3D-Lernwelt zum Membrantransport</p>
 </header>
+
+<main>
+
+<section class="intro">
+  <h1>Willkommen in der Welt des Membrantransports</h1>
+  <p>
+    Erkunde die Zellmembran und entdecke, wie unterschiedliche Stoffe
+    durch sie hindurchtransportiert werden. Drehe die 3D-Modelle,
+    betrachte sie aus verschiedenen Perspektiven und lerne die
+    biologischen Vorgänge Schritt für Schritt.
+  </p>
+  <p>
+    Inhaltlicher Umfang: ausschließlich die Schulbuchabschnitte
+    <strong>3.5 und 3.6</strong>.
+  </p>
+</section>
 
 <div class="layout">
 
-<aside class="panel nav">
-  <h2>Deine Lernreise</h2>
-  <div class="navlist" id="nav"></div>
-  <p class="muted">
-    Arbeite die Stationen der Reihe nach durch.
-    Du kannst jederzeit zurückspringen.
-  </p>
-</aside>
+<nav>
+  <h3>3.5 · ERLEICHTERTE DIFFUSION</h3>
+  <button class="navbtn active" data-id="membrane">01 · Biomembran</button>
+  <button class="navbtn" data-id="aqua">02 · Aquaporine</button>
+  <button class="navbtn" data-id="channel">03 · Ionenkanäle</button>
+  <button class="navbtn" data-id="carrier">04 · Carrierproteine</button>
 
-<section class="panel lesson">
-  <div class="meta">
-    <span id="stationNo">STATION 01 / 09</span>
-    <span id="category">Grundlagen</span>
-  </div>
+  <h3>3.6 · AKTIVER TRANSPORT</h3>
+  <button class="navbtn" data-id="active">05 · Aktiver Transport</button>
+  <button class="navbtn" data-id="types">06 · Transportformen</button>
+  <button class="navbtn" data-id="plant">07 · Pflanzenwurzel</button>
+</nav>
 
-  <h2 id="title"></h2>
-  <p class="lead" id="intro"></p>
+<section class="content">
 
-  <div class="diagram" id="diagram"></div>
-
-  <div class="legend">
-    <span><i class="dot" style="background:#f6bd60"></i>Na⁺ / Membran</span>
-    <span><i class="dot" style="background:#66a9ff"></i>Transportprotein</span>
-    <span><i class="dot" style="background:#a78bfa"></i>Glucose</span>
-    <span><i class="dot" style="background:#55dfd2"></i>K⁺</span>
-  </div>
-
-  <article class="content" id="content"></article>
-
-  <div class="controls">
-    <button class="action" id="prev">← Zurück</button>
-    <button class="action primary" id="next">Nächste Station →</button>
-  </div>
-</section>
+<div class="heading">
+  <h2 id="stationTitle">Die Biomembran</h2>
+  <span class="tag" id="stationTag">ABSCHNITT 3.5</span>
 </div>
 
-<section class="panel quiz">
-  <h2>Wissenscheck</h2>
-  <p class="muted">
-    Teste dein Wissen mit fünf Fragen.
-  </p>
-  <div id="quiz"></div>
+<div class="viewer">
+  <canvas id="scene"></canvas>
+  <div class="viewer-help">
+    Ziehen = drehen · Zwei Finger = zoomen · Mausrad = zoomen
+  </div>
+</div>
+
+<div class="controls">
+  <button class="control" id="reset">↻ Ansicht zurücksetzen</button>
+  <button class="control" id="labels">Beschriftungen an/aus</button>
+  <button class="control" id="animate">▶ Animation starten</button>
+</div>
+
+<div class="legend">
+  <span><i class="dot" style="background:#ffad5c"></i>Transportproteine</span>
+  <span><i class="dot" style="background:#ff779c"></i>Transportierte Stoffe</span>
+  <span><i class="dot" style="background:#42d9e8"></i>Wasser / Protonen</span>
+  <span><i class="dot" style="background:#7de0a3"></i>Weitere Ionen</span>
+</div>
+
+<div class="info-grid" id="info">
+</div>
+
 </section>
-
-<footer>
-  CELL WORLD · Biologie Lernwelt<br>
-  Schematische Darstellungen – nicht maßstabsgetreu.
-</footer>
-
+</div>
 </main>
 
-<script>
-const $ = id => document.getElementById(id);
+<footer>
+CELL WORLD · Biologie · Schulbuchabschnitte 3.5 und 3.6
+</footer>
 
-const membrane = `
-<rect x="18" y="112" width="324" height="12" rx="6" fill="#a9793e"/>
-<rect x="18" y="132" width="324" height="12" rx="6" fill="#a9793e"/>
-${Array.from({length:14},(_,i)=>`
-<circle cx="${27+i*23}" cy="118" r="6" fill="#f6d69d"/>
-<circle cx="${27+i*23}" cy="138" r="6" fill="#f6d69d"/>
-`).join('')}
-`;
+<script type="module">
+import * as THREE from "three";
+import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 
-const base = inner => `
-<svg viewBox="0 0 360 250">
-<text x="18" y="23" fill="#d9eaf2" font-size="12">Außenraum</text>
-${membrane}
-${inner}
-<text x="18" y="181" fill="#d9eaf2" font-size="12">Cytoplasma</text>
-</svg>
-`;
+/* --------------------------------
+   GRUNDLAGEN DER 3D-SZENE
+-------------------------------- */
 
-const protein = (x=180) => `
-<path d="M${x-18} 92 Q${x-28} 104 ${x-18} 119
-L${x-18} 143 Q${x} 162 ${x+18} 143
-L${x+18} 119 Q${x+28} 104 ${x+18} 92
-Q${x} 78 ${x-18} 92Z"
-fill="#438bd0" stroke="#8fc5ff" stroke-width="2"/>
-`;
+const canvas = document.getElementById("scene");
 
-const arrow = (x1,y1,x2,y2,c="#f6bd60") => `
-<path d="M${x1} ${y1} L${x2} ${y2}"
-stroke="${c}" stroke-width="3" fill="none"/>
-<path d="M${x2-6} ${y2-8} L${x2} ${y2} L${x2+6} ${y2-8}"
-stroke="${c}" stroke-width="3" fill="none"/>
-`;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color("#0a1929");
 
-const stations = [
+const camera = new THREE.PerspectiveCamera(
+  45, 1, 0.1, 100
+);
+camera.position.set(8,7,10);
 
-{
-t:"Wie gelangen Stoffe durch die Membran?",
-c:"Grundlagen",
-i:"Die Zellmembran grenzt das Zellinnere von der Umgebung ab. Sie ist selektiv permeabel: Manche Stoffe passieren sie leicht, andere benötigen Transportproteine.",
-s:()=>base(`
-<g fill="#f6bd60">
-<circle cx="65" cy="65" r="5"/>
-<circle cx="90" cy="80" r="5"/>
-<circle cx="112" cy="60" r="5"/>
-</g>
-${arrow(90,82,90,166)}
-${protein(245)}
-${arrow(245,72,245,169,"#66a9ff")}
-<text x="110" y="76" fill="#fff" font-size="10">Direkt</text>
-<text x="267" y="88" fill="#fff" font-size="10">Protein</text>
-`),
-b:`
-<h3>Drei grundlegende Wege</h3>
+const renderer = new THREE.WebGLRenderer({
+  canvas,
+  antialias:true
+});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.shadowMap.enabled = true;
 
-<div class="step">
-<b>Einfache Diffusion:</b>
-Kleine, unpolare Moleküle wie O₂ und CO₂
-gelangen direkt durch die Lipiddoppelschicht.
-</div>
+const controls = new OrbitControls(camera,renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.minDistance = 4;
+controls.maxDistance = 19;
+controls.target.set(0,0,0);
 
-<div class="step">
-<b>Erleichterte Diffusion:</b>
-Kanal- oder Carrierproteine helfen Stoffen,
-die Membran zu passieren. Der Transport erfolgt
-mit dem Gradienten und benötigt kein ATP.
-</div>
+scene.add(new THREE.AmbientLight(0xffffff,1.5));
 
-<div class="step">
-<b>Aktiver Transport:</b>
-Stoffe werden gegen ihren Gradienten transportiert.
-Dafür wird Energie benötigt.
-</div>
+const light = new THREE.DirectionalLight(0xffffff,2.5);
+light.position.set(5,9,8);
+scene.add(light);
 
-<div class="callout">
-<b>Merke:</b> Ein Transportprotein bedeutet
-nicht automatisch aktiven Transport.
-</div>
-`
-},
+const light2 = new THREE.PointLight(0x42d9e8,30,30);
+light2.position.set(-5,2,4);
+scene.add(light2);
 
-{
-t:"Aufbau der Zellmembran",
-c:"Membranstruktur",
-i:"Die Membran besteht aus einer Phospholipid-Doppelschicht. Die Köpfe sind hydrophil, die Fettsäureschwänze hydrophob.",
-s:()=>base(`
-<rect x="110" y="91" width="140" height="66" rx="23"
-fill="#438bd0" stroke="#8fc5ff" stroke-width="2"/>
-<path d="M180 96 V152" stroke="#dceeff" stroke-width="3" stroke-dasharray="4 4"/>
-<text x="180" y="211" fill="#d9eaf2" text-anchor="middle" font-size="11">
-Membranprotein
-</text>
-`),
-b:`
-<h3>Phospholipide</h3>
-<ul>
-<li><b>Hydrophiler Kopf:</b> wasserliebend; zeigt zum Außenraum und zum Cytoplasma.</li>
-<li><b>Hydrophobe Schwänze:</b> wassermeidend; liegen einander zugewandt im Inneren der Membran.</li>
-</ul>
+let objects = [];
+let labels = [];
+let moving = [];
+let animationOn = false;
+let current = "membrane";
 
-<h3>Warum ist die Membran selektiv?</h3>
-<p>
-Der hydrophobe Membrankern lässt kleine unpolare Moleküle
-leichter passieren. Geladene Ionen und größere polare
-Moleküle benötigen meist spezielle Transportproteine.
-</p>
-`
-},
-
-{
-t:"Diffusion – entlang des Gradienten",
-c:"Passiver Transport",
-i:"Teilchen bewegen sich aufgrund ihrer Wärmebewegung zufällig. Bei einem Konzentrationsunterschied entsteht eine Nettobewegung von hoher zu niedriger Konzentration.",
-s:()=>base(`
-<g fill="#f6bd60">
-${Array.from({length:13},(_,i)=>`
-<circle cx="${35+(i%4)*23}"
-cy="${53+Math.floor(i/4)*17}" r="5"/>
-`).join('')}
-</g>
-${arrow(126,76,236,76)}
-<text x="72" y="37" fill="#fff" text-anchor="middle" font-size="10">Hohe Konzentration</text>
-<text x="276" y="37" fill="#fff" text-anchor="middle" font-size="10">Niedrige</text>
-`),
-b:`
-<h3>Konzentrationsgradient</h3>
-<p>
-Ein Konzentrationsgradient ist ein Unterschied in der
-Konzentration eines Stoffes zwischen zwei Bereichen.
-Insgesamt wandern mehr Teilchen von hoher zu niedriger
-Konzentration.
-</p>
-
-<h3>Gleichgewicht</h3>
-<p>
-Am Gleichgewicht bewegen sich Teilchen weiterhin.
-Die Bewegungen in beide Richtungen gleichen sich
-jedoch aus. Es gibt keinen Nettotransport mehr.
-</p>
-
-<div class="callout">
-<b>Passiver Transport:</b>
-Es wird keine zusätzliche Energie durch ATP benötigt.
-</div>
-`
-},
-
-{
-t:"Kanalproteine – eine hydrophile Pore",
-c:"Erleichterte Diffusion",
-i:"Kanalproteine bilden einen selektiven, wassergefüllten Durchgang durch die Membran.",
-s:()=>base(`
-${protein(180)}
-<rect x="174" y="101" width="12" height="48" rx="6" fill="#c8eaff"/>
-<g fill="#f6bd60">
-<circle cx="180" cy="60" r="6"/>
-<circle cx="180" cy="78" r="6"/>
-</g>
-${arrow(180,85,180,172)}
-<text x="208" y="119" fill="#fff" font-size="10">Pore</text>
-`),
-b:`
-<h3>Ablauf</h3>
-<ol>
-<li>Ein passendes Teilchen befindet sich auf einer Membranseite.</li>
-<li>Es gelangt in die hydrophile Pore.</li>
-<li>Es diffundiert entlang seines elektrochemischen Gradienten auf die andere Seite.</li>
-</ol>
-
-<h3>Beispiele</h3>
-<ul>
-<li><b>Ionenkanäle:</b> transportieren bestimmte Ionen wie Na⁺, K⁺ oder Cl⁻.</li>
-<li><b>Aquaporine:</b> ermöglichen den schnellen Transport von Wasser.</li>
-</ul>
-
-<div class="callout">
-Ein Kanal pumpt nicht gegen den Gradienten.
-Der Transport durch einen offenen Kanal ist passiv.
-</div>
-`
-},
-
-{
-t:"Carrierproteine – Bindung und Formänderung",
-c:"Erleichterte Diffusion",
-i:"Ein Carrier bindet ein bestimmtes Molekül. Danach verändert das Protein seine Form und gibt das Molekül auf der anderen Seite frei.",
-s:()=>base(`
-<path d="M147 91 Q120 115 151 145 Q180 164 209 145 Q240 115 213 91 Q180 73 147 91Z"
-fill="#438bd0" stroke="#8fc5ff" stroke-width="2"/>
-<circle cx="180" cy="84" r="8" fill="#a78bfa"/>
-${arrow(180,157,180,181,"#a78bfa")}
-<text x="197" y="67" fill="#fff" font-size="10">Substrat</text>
-`),
-b:`
-<h3>Der Carrier-Zyklus</h3>
-<div class="step"><b>1. Bindung:</b> Das Molekül bindet an eine spezifische Stelle.</div>
-<div class="step"><b>2. Formänderung:</b> Der Carrier verändert seine räumliche Struktur.</div>
-<div class="step"><b>3. Freisetzung:</b> Das Molekül wird auf der anderen Seite abgegeben.</div>
-<div class="step"><b>4. Rückkehr:</b> Der Carrier kehrt in seine Ausgangsform zurück.</div>
-
-<p><b>Beispiel:</b> GLUT-Transporter schleusen Glucose durch erleichterte Diffusion in Zellen – entlang des Konzentrationsgradienten.</p>
-`
-},
-
-{
-t:"Uniport, Symport und Antiport",
-c:"Transportformen",
-i:"Diese Begriffe beschreiben, wie viele Stoffarten ein Transportprotein bewegt und in welche Richtung.",
-s:()=>base(`
-<g stroke="#438bd0" stroke-width="13" stroke-linecap="round">
-<path d="M75 94 V154"/>
-<path d="M180 94 V154"/>
-<path d="M285 94 V154"/>
-</g>
-${arrow(75,69,75,173)}
-${arrow(180,69,180,173)}
-<path d="M198 173 V69" stroke="#a78bfa" stroke-width="3"/>
-<path d="M192 77 L198 69 L204 77" fill="none" stroke="#a78bfa" stroke-width="3"/>
-<text x="75" y="204" fill="#fff" text-anchor="middle" font-size="10">Uniport</text>
-<text x="180" y="204" fill="#fff" text-anchor="middle" font-size="10">Symport</text>
-<text x="285" y="204" fill="#fff" text-anchor="middle" font-size="10">Antiport</text>
-`),
-b:`
-<h3>Die drei Transportformen</h3>
-<ul>
-<li><b>Uniport:</b> Eine Stoffart wird in eine Richtung transportiert.</li>
-<li><b>Symport:</b> Zwei oder mehr Stoffarten werden gemeinsam in dieselbe Richtung transportiert.</li>
-<li><b>Antiport:</b> Stoffe werden in entgegengesetzte Richtungen transportiert.</li>
-</ul>
-
-<div class="callout">
-<b>Prüfungsfalle:</b>
-Diese Begriffe sagen allein nicht, ob der Transport aktiv oder passiv ist.
-</div>
-`
-},
-
-{
-t:"ATP – Energie für Zellprozesse",
-c:"Energie",
-i:"ATP bedeutet Adenosintriphosphat. Bei der Hydrolyse wird freie Energie verfügbar, die an energieverbrauchende Vorgänge gekoppelt werden kann.",
-s:()=>`
-<svg viewBox="0 0 360 240">
-<text x="18" y="25" fill="#d9eaf2" font-size="13">ATP-Hydrolyse</text>
-<rect x="20" y="65" width="95" height="55" rx="12" fill="#438bd0"/>
-<text x="67" y="99" fill="white" text-anchor="middle" font-size="20">ATP</text>
-<text x="130" y="98" fill="#fff" font-size="16">+ H₂O</text>
-${arrow(210,93,248,93,"#f28bb7")}
-<rect x="260" y="65" width="78" height="55" rx="12" fill="#a78bfa"/>
-<text x="299" y="99" fill="white" text-anchor="middle" font-size="16">ADP</text>
-<circle cx="299" cy="155" r="17" fill="#f6bd60"/>
-<text x="299" y="159" fill="#17202a" text-anchor="middle" font-size="12">Pᵢ</text>
-<text x="180" y="208" fill="#d9eaf2" text-anchor="middle" font-size="11">Freie Energie wird verfügbar</text>
-</svg>
-`,
-b:`
-<h3>Reaktionsgleichung</h3>
-<div class="callout" style="text-align:center">
-<b>ATP + H₂O → ADP + Pᵢ</b><br>
-ATP + Wasser → ADP + anorganisches Phosphat
-</div>
-
-<h3>Wie wird Energie bereitgestellt?</h3>
-<ol>
-<li>ATP reagiert mit Wasser; eine Phosphatgruppe wird abgespalten.</li>
-<li>Bei dieser Hydrolyse wird freie Energie verfügbar.</li>
-<li>Die Zelle koppelt die Reaktion an einen energieverbrauchenden Vorgang.</li>
-</ol>
-
-<p>
-Entscheidend ist die gesamte Hydrolysereaktion.
-Nicht das bloße Brechen einer Bindung liefert Energie.
-</p>
-`
-},
-
-{
-t:"Natrium-Kalium-Pumpe",
-c:"Primär aktiver Transport",
-i:"Die Natrium-Kalium-ATPase nutzt ATP direkt, um Na⁺ und K⁺ gegen ihre elektrochemischen Gradienten zu bewegen.",
-s:()=>base(`
-${protein(180)}
-<g fill="#f6bd60">
-<circle cx="155" cy="59" r="6"/>
-<circle cx="180" cy="48" r="6"/>
-<circle cx="205" cy="59" r="6"/>
-</g>
-<g fill="#55dfd2">
-<circle cx="150" cy="178" r="6"/>
-<circle cx="210" cy="178" r="6"/>
-</g>
-${arrow(180,83,180,48,"#f6bd60")}
-${arrow(225,169,225,70,"#55dfd2")}
-<text x="211" y="37" fill="#fff" font-size="11">3 Na⁺ hinaus</text>
-<text x="240" y="145" fill="#fff" font-size="11">2 K⁺ hinein</text>
-<text x="55" y="217" fill="#fff" font-size="11">1 ATP</text>
-`),
-b:`
-<h3>Ein vollständiger Pumpzyklus</h3>
-<div class="step"><b>1.</b> Drei Na⁺-Ionen binden an die Pumpe auf der Innenseite.</div>
-<div class="step"><b>2.</b> ATP wird hydrolysiert. Eine Phosphatgruppe wird auf die Pumpe übertragen.</div>
-<div class="step"><b>3.</b> Die Form der Pumpe ändert sich. Drei Na⁺ werden nach außen abgegeben.</div>
-<div class="step"><b>4.</b> Zwei K⁺-Ionen binden von außen an die Pumpe.</div>
-<div class="step"><b>5.</b> Die Phosphatgruppe wird abgespalten. Die Pumpe kehrt in ihre Ausgangsform zurück und gibt K⁺ nach innen ab.</div>
-
-<h3>Bilanz pro ATP</h3>
-<div class="callout">
-<b>3 Na⁺ hinaus · 2 K⁺ hinein · 1 ATP verbraucht</b>
-</div>
-
-<p>
-Die Pumpe hält die Na⁺-Konzentration innen niedrig
-und die K⁺-Konzentration innen hoch.
-</p>
-`
-},
-
-{
-t:"Sekundär aktiver Transport",
-c:"Indirekte Energie",
-i:"Ein Ionengradient, der zuvor durch eine ATP-verbrauchende Pumpe aufgebaut wurde, liefert die Energie für den Transport eines weiteren Stoffes.",
-s:()=>base(`
-${protein(180)}
-<g fill="#f6bd60">
-<circle cx="155" cy="54" r="6"/>
-<circle cx="180" cy="43" r="6"/>
-<circle cx="205" cy="54" r="6"/>
-<circle cx="230" cy="68" r="6"/>
-</g>
-<circle cx="180" cy="83" r="8" fill="#a78bfa"/>
-${arrow(180,88,180,174,"#f6bd60")}
-<path d="M205 174 V75" stroke="#a78bfa" stroke-width="3"/>
-<path d="M199 83 L205 75 L211 83" fill="none" stroke="#a78bfa" stroke-width="3"/>
-<text x="20" y="202" fill="#fff" font-size="10">Na⁺ folgt seinem Gradienten</text>
-<text x="20" y="217" fill="#fff" font-size="10">Glucose wird mittransportiert</text>
-`),
-b:`
-<h3>Beispiel: Na⁺-Glucose-Symporter</h3>
-<div class="step"><b>1. Gradient aufbauen:</b> Die Natrium-Kalium-Pumpe verbraucht ATP und hält die Na⁺-Konzentration außerhalb der Zelle hoch.</div>
-<div class="step"><b>2. Natrium strömt zurück:</b> Na⁺ bewegt sich durch einen Symporter zurück in die Zelle – entlang seines elektrochemischen Gradienten.</div>
-<div class="step"><b>3. Glucose wird mitgenommen:</b> Die Energie des Na⁺-Gradienten ermöglicht es, Glucose gleichzeitig gegen ihren Konzentrationsgradienten in die Zelle zu transportieren.</div>
-
-<div class="callout">
-<b>Warum sekundär?</b>
-Der Symporter spaltet selbst kein ATP.
-Die Energie stammt indirekt aus dem zuvor
-durch ATP aufgebauten Ionengradienten.
-</div>
-
-<p>
-<b>Merksatz:</b> Primär aktiv = ATP direkt.
-Sekundär aktiv = Energie aus einem zuvor
-aufgebauten Ionengradienten.
-</p>
-`
+function add(obj) {
+  scene.add(obj);
+  objects.push(obj);
+  return obj;
 }
-];
 
-let current=0;
-
-function render(){
-  const s=stations[current];
-
-  $("stationNo").textContent=
-    `STATION ${String(current+1).padStart(2,"0")} / 09`;
-
-  $("category").textContent=s.c;
-  $("title").textContent=s.t;
-  $("intro").textContent=s.i;
-  $("diagram").innerHTML=s.s();
-  $("content").innerHTML=s.b;
-
-  $("prev").disabled=current===0;
-
-  $("next").textContent=
-    current===8 ? "Zur ersten Station ↺" : "Nächste Station →";
-
-  document.querySelectorAll("#nav button").forEach((b,i)=>{
-    b.classList.toggle("active",i===current);
+function material(color,roughness=0.55) {
+  return new THREE.MeshStandardMaterial({
+    color,
+    roughness,
+    metalness:0.05
   });
 }
 
-stations.forEach((s,i)=>{
-  const b=document.createElement("button");
-  b.innerHTML=`${String(i+1).padStart(2,"0")} · ${s.t}<small>${s.c}</small>`;
-  b.onclick=()=>{current=i;render()};
-  $("nav").append(b);
-});
+const gold = material("#e5ad55");
+const purple = material("#7659a5");
+const orange = material("#f0a34d");
+const pink = material("#ff779c");
+const cyan = material("#42d9e8");
+const green = material("#7de0a3");
+const dark = material("#213b50");
 
-$("prev").onclick=()=>{
-  current=Math.max(0,current-1);
-  render();
-};
+function sphere(x,y,z,r,color) {
+  const mesh = new THREE.Mesh(
+    new THREE.SphereGeometry(r,24,18),
+    color
+  );
+  mesh.position.set(x,y,z);
+  mesh.castShadow=true;
+  return add(mesh);
+}
 
-$("next").onclick=()=>{
-  current=(current+1)%stations.length;
-  render();
-};
+function cylinder(x,y,z,r1,r2,h,color) {
+  const mesh = new THREE.Mesh(
+    new THREE.CylinderGeometry(r1,r2,h,20),
+    color
+  );
+  mesh.position.set(x,y,z);
+  mesh.castShadow=true;
+  return add(mesh);
+}
 
-/* QUIZ */
+function textLabel(text,x,y,z,color="#ffffff") {
+  const canvas2=document.createElement("canvas");
+  const ctx=canvas2.getContext("2d");
+  canvas2.width=512;
+  canvas2.height=128;
+  ctx.fillStyle="rgba(5,17,31,0.88)";
+  ctx.roundRect(4,4,504,120,18);
+  ctx.fill();
+  ctx.font="bold 34px Arial";
+  ctx.fillStyle=color;
+  ctx.textAlign="center";
+  ctx.textBaseline="middle";
+  ctx.fillText(text,256,64);
 
-const questions=[
-[
-"Welcher Vorgang benötigt keine direkte ATP-Energie?",
-["Natrium-Kalium-Pumpe","Erleichterte Diffusion","Primär aktiver Transport"],
-1,
-"Erleichterte Diffusion ist passiv. Ein Kanal oder Carrier kann helfen, ATP wird aber nicht direkt benötigt."
-],
-[
-"Was transportiert die Na⁺/K⁺-Pumpe pro ATP?",
-["2 Na⁺ hinaus, 3 K⁺ hinein","3 Na⁺ hinaus, 2 K⁺ hinein","3 Na⁺ hinein, 2 K⁺ hinaus"],
-1,
-"Pro ATP gehen drei Natriumionen hinaus und zwei Kaliumionen hinein."
-],
-[
-"Was treibt sekundär aktiven Transport an?",
-["Ein Ionengradient","Direkte ATP-Spaltung im Symporter","Nur Wärme"],
-0,
-"Die Energie stammt aus einem zuvor aufgebauten elektrochemischen Ionengradienten."
-],
-[
-"Was bedeutet Antiport?",
-["Zwei Stoffe in dieselbe Richtung","Ein Stoff in eine Richtung","Stoffe in entgegengesetzte Richtungen"],
-2,
-"Beim Antiport bewegen sich die transportierten Stoffe in entgegengesetzte Richtungen."
-],
-[
-"Was geschieht am Diffusionsgleichgewicht?",
-["Teilchen stehen still","Es gibt keinen Nettotransport","Alle Teilchen sind auf einer Seite"],
-1,
-"Teilchen bewegen sich weiter zufällig, aber die Bewegungen in beide Richtungen gleichen sich aus."
-]
-];
+  const texture=new THREE.CanvasTexture(canvas2);
+  const sprite=new THREE.Sprite(
+    new THREE.SpriteMaterial({map:texture,transparent:true})
+  );
+  sprite.position.set(x,y,z);
+  sprite.scale.set(3.1,0.78,1);
+  add(sprite);
+  labels.push(sprite);
+}
 
-let qi=0;
-let score=0;
-let answered=false;
+function arrow(from,to,color="#42d9e8") {
+  const a=new THREE.Vector3(...from);
+  const b=new THREE.Vector3(...to);
+  const direction=new THREE.Vector3().subVectors(b,a).normalize();
+  const length=a.distanceTo(b);
+  const helper=new THREE.ArrowHelper(
+    direction,a,length,color,0.4,0.22
+  );
+  add(helper);
+}
 
-function quiz(){
+function clearScene() {
+  for(const obj of objects) {
+    scene.remove(obj);
+    if(obj.geometry) obj.geometry.dispose();
+    if(obj.material) {
+      if(Array.isArray(obj.material)) {
+        obj.material.forEach(m=>m.dispose());
+      } else obj.material.dispose();
+    }
+  }
+  objects=[];
+  labels=[];
+  moving=[];
+}
 
-  if(qi>=questions.length){
-    $("quiz").innerHTML=`
-      <h3>Ergebnis: ${score} von ${questions.length}</h3>
-      <p>
-      ${score===5
-        ?"Sehr gut – alle Fragen richtig!"
-        :score>=3
-        ?"Gute Grundlage. Wiederhole die Stationen zu deinen Fehlern."
-        :"Gehe die Lernstationen noch einmal durch und probiere es erneut."}
-      </p>
-      <button class="action primary" id="retry">
-        Quiz wiederholen
-      </button>
-    `;
+/* --------------------------------
+   BIOMEMBRAN
+-------------------------------- */
 
-    $("retry").onclick=()=>{
-      qi=0;
-      score=0;
-      answered=false;
-      quiz();
-    };
-    return;
+function membrane(protein=false) {
+  const group=new THREE.Group();
+
+  for(let row of [-1,1]) {
+    for(let i=-5;i<=5;i++) {
+      const x=i*0.48;
+      const head=new THREE.Mesh(
+        new THREE.SphereGeometry(0.14,16,12),
+        purple
+      );
+      head.position.set(x,row*0.78,0);
+      group.add(head);
+
+      const tail1=new THREE.Mesh(
+        new THREE.CylinderGeometry(0.045,0.055,0.52,10),
+        gold
+      );
+      tail1.position.set(x,row*0.43,0);
+      group.add(tail1);
+
+      const tail2=tail1.clone();
+      tail2.position.x+=0.12;
+      tail2.rotation.z=0.12;
+      group.add(tail2);
+    }
   }
 
-  const q=questions[qi];
-
-  $("quiz").innerHTML=`
-    <div class="muted">
-      Frage ${qi+1} / ${questions.length}
-      · Richtige Antworten: ${score}
-    </div>
-
-    <h3>${q[0]}</h3>
-
-    ${q[1].map((a,i)=>`
-      <button class="answer" data-i="${i}">
-        ${String.fromCharCode(65+i)}. ${a}
-      </button>
-    `).join("")}
-
-    <p id="feedback"></p>
-
-    <button class="action primary" id="qnext" disabled>
-      ${qi===questions.length-1
-        ?"Ergebnis anzeigen"
-        :"Nächste Frage →"}
-    </button>
-  `;
-
-  document.querySelectorAll(".answer").forEach(b=>{
-    b.onclick=()=>{
-      if(answered)return;
-      answered=true;
-
-      const ok=Number(b.dataset.i)===q[2];
-      if(ok)score++;
-
-      document.querySelectorAll(".answer").forEach(x=>{
-        x.disabled=true;
-        if(Number(x.dataset.i)===q[2]){
-          x.classList.add("correct");
-        }
-      });
-
-      if(!ok)b.classList.add("wrong");
-
-      $("feedback").textContent=
-        (ok?"Richtig! ":"Nicht ganz. ")+q[3];
-
-      $("qnext").disabled=false;
-    };
+  group.traverse(o=>{
+    if(o.isMesh) {
+      o.castShadow=true;
+      o.receiveShadow=true;
+    }
   });
 
-  $("qnext").onclick=()=>{
-    qi++;
-    answered=false;
-    quiz();
-  };
+  add(group);
+  return group;
 }
 
+function protein(x=0,color="#f0a34d",scale=1) {
+  const group=new THREE.Group();
+  const body=new THREE.Mesh(
+    new THREE.CapsuleGeometry(0.42,1.05,8,16),
+    material(color)
+  );
+  body.scale.set(1,1,0.85);
+  group.add(body);
+
+  const opening=new THREE.Mesh(
+    new THREE.CylinderGeometry(0.18,0.18,1.6,24),
+    material("#172b42")
+  );
+  opening.position.set(0,0,0.05);
+  group.add(opening);
+
+  group.position.set(x,0,0);
+  group.scale.setScalar(scale);
+  add(group);
+  return group;
+}
+
+function particles(count,color,range=4,y=2) {
+  for(let i=0;i<count;i++) {
+    const x=(Math.random()-0.5)*range*2;
+    const z=(Math.random()-0.5)*1.3;
+    const yy=y+(Math.random()-0.5)*0.7;
+    const p=sphere(x,yy,z,0.09,color);
+    moving.push({
+      obj:p,
+      speed:0.008+Math.random()*0.015,
+      min:-2.2,
+      max:2.4
+    });
+  }
+}
+
+/* --------------------------------
+   STATIONEN
+-------------------------------- */
+
+const stations = {
+
+membrane: {
+ title:"Die Biomembran",
+ tag:"ABSCHNITT 3.5",
+ description:`
+ <h3>Aufbau der Biomembran</h3>
+ <p>Die Biomembran besteht aus einer <span class="term">Lipiddoppelschicht</span>.
+ Sie bildet eine Abgrenzung zwischen dem Zellinneren und dem Außenraum.</p>
+ <p>Die Lipide besitzen zwei unterschiedliche Bereiche:</p>
+ <ul>
+ <li><span class="term">Hydrophiler Kopf:</span> wasserliebend und dem wässrigen Umfeld zugewandt.</li>
+ <li><span class="term">Hydrophober Bereich:</span> wasserabweisend und im Inneren der Membran angeordnet.</li>
+ </ul>
+ `,
+ details:`
+ <h3>Selektive Permeabilität</h3>
+ <p>Das Innere der Lipiddoppelschicht ist hydrophob. Deshalb können
+ wasserlösliche Stoffe wie Glucose die Membran nicht ohne Weiteres
+ durchqueren.</p>
+ <p>Die Membran ist <span class="term">selektiv permeabel</span>:
+ Sie lässt bestimmte Stoffe passieren, während andere zurückgehalten
+ werden.</p>
+ <div class="highlight">Die Membran entscheidet also mit darüber,
+ welche Stoffe in eine Zelle hinein- oder aus ihr herausgelangen.</div>
+ `,
+ extra:`
+ <h3>Wichtige Fachbegriffe</h3>
+ <ul>
+ <li><b>Permeabilität:</b> Durchlässigkeit einer Membran.</li>
+ <li><b>Hydrophil:</b> wasserliebend.</li>
+ <li><b>Hydrophob:</b> wasserabweisend.</li>
+ <li><b>Lipiddoppelschicht:</b> doppelte Schicht aus Lipiden.</li>
+ <li><b>Selektiv permeabel:</b> nur für bestimmte Stoffe durchlässig.</li>
+ </ul>
+ `,
+ build() {
+   membrane();
+   particles(20,pink,4,2.2);
+   textLabel("Hydrophile Köpfe",0,1.8,0,"#c7a9ff");
+   textLabel("Hydrophober Innenbereich",0,0,0.8,"#ffce83");
+   textLabel("Zellmembran",0,-1.8,0,"#42d9e8");
+ }
+},
+
+aqua: {
+ title:"Aquaporine – Wasserkanäle",
+ tag:"ABSCHNITT 3.5",
+ description:`
+ <h3>Was sind Aquaporine?</h3>
+ <p><span class="term">Aquaporine</span> sind spezielle Kanalproteine
+ in Biomembranen. Sie ermöglichen Wasser eine schnelle Diffusion
+ durch die Membran.</p>
+ <p>Wassermoleküle können durch den engen Kanal hindurchtreten.
+ Der Kanal ist so aufgebaut, dass Protonen am Durchtritt gehindert werden.</p>
+ `,
+ details:`
+ <h3>Wie funktioniert der Wassertransport?</h3>
+ <ol>
+ <li>Wassermoleküle befinden sich auf einer Seite der Membran.</li>
+ <li>Sie gelangen in den Kanal des Aquaporins.</li>
+ <li>Sie bewegen sich durch den Kanal hindurch.</li>
+ <li>Auf der anderen Membranseite treten sie wieder aus.</li>
+ </ol>
+ <p>Der Transport erfolgt durch Diffusion und benötigt keine zusätzliche
+ Energiezufuhr durch ATP.</p>
+ `,
+ extra:`
+ <h3>Besonderheit der Aquaporine</h3>
+ <p>Die Wasserkanäle sind sehr effizient. Laut Schulbuch können
+ Milliarden Wassermoleküle pro Sekunde einen solchen Kanal passieren.</p>
+ <div class="highlight">Aquaporine erleichtern den Wassertransport,
+ ohne dass die Membran für alle anderen Stoffe geöffnet wird.</div>
+ <h3>Fachbegriffe</h3>
+ <ul>
+ <li><b>Aquaporin:</b> Kanalprotein für Wasser.</li>
+ <li><b>Diffusion:</b> Bewegung von Teilchen entlang ihres Konzentrationsgefälles.</li>
+ <li><b>Kanalprotein:</b> Protein, das einen Durchgang durch die Membran bildet.</li>
+ </ul>
+ `,
+ build() {
+   membrane();
+   protein(0,"#e99d4c",1.15);
+   particles(18,cyan,3,2.1);
+   arrow([0,2,0],[0,-2,0],"#42d9e8");
+   textLabel("Aquaporin",2.1,0.3,0,"#ffbd76");
+   textLabel("Wasser",2.1,1.7,0,"#42d9e8");
+   textLabel("Wassertransport",0,-2,1,"#42d9e8");
+ }
+},
+
+channel: {
+ title:"Ionenkanäle",
+ tag:"ABSCHNITT 3.5",
+ description:`
+ <h3>Erleichterte Diffusion durch Kanäle</h3>
+ <p>Bestimmte Ionen können die hydrophobe Membran nicht einfach
+ durchqueren. Dafür gibt es <span class="term">Ionenkanäle</span>.</p>
+ <p>Diese Kanalproteine ermöglichen bestimmten Ionen den Durchtritt
+ durch die Membran.</p>
+ `,
+ details:`
+ <h3>Selektivität und Steuerung</h3>
+ <p>Ionenkanäle sind selektiv: Sie lassen nur bestimmte Ionen passieren.
+ Manche Kanäle können durch ein elektrisches oder chemisches Signal
+ geöffnet oder geschlossen werden.</p>
+ <p>Beispiele für Ionen, die durch entsprechende Kanäle transportiert
+ werden können, sind Natrium- und Kalium-Ionen.</p>
+ <div class="highlight">Ein geöffneter Ionenkanal ermöglicht den
+ passiven Transport entlang des Konzentrationsgefälles.</div>
+ `,
+ extra:`
+ <h3>Fachbegriffe</h3>
+ <ul>
+ <li><b>Ion:</b> elektrisch geladenes Teilchen.</li>
+ <li><b>Ionenkanal:</b> selektives Kanalprotein für bestimmte Ionen.</li>
+ <li><b>Selektivität:</b> bestimmte Stoffe werden bevorzugt durchgelassen.</li>
+ <li><b>Konzentrationsgefälle:</b> Unterschied der Konzentration
+ zwischen zwei Bereichen.</li>
+ </ul>
+ `,
+ build() {
+   membrane();
+   protein(0,"#e99d4c",1.1);
+   particles(17,green,3,2.1);
+   arrow([0,2,0],[0,-2,0],"#7de0a3");
+   textLabel("Ionenkanal",2.1,0.4,0,"#ffbd76");
+   textLabel("Ionen",2.1,1.7,0,"#7de0a3");
+   textLabel("Konzentrationsgefälle",0,-2,1,"#7de0a3");
+ }
+},
+
+carrier: {
+ title:"Carrierproteine",
+ tag:"ABSCHNITT 3.5",
+ description:`
+ <h3>Was machen Carrierproteine?</h3>
+ <p><span class="term">Carrierproteine</span> transportieren größere
+ Moleküle oder Ionen durch die Biomembran.</p>
+ <p>Das zu transportierende Molekül bindet zunächst an eine passende
+ Bindungsstelle des Proteins – ähnlich wie ein Schlüssel in ein Schloss.</p>
+ `,
+ details:`
+ <h3>Transport Schritt für Schritt</h3>
+ <ol>
+ <li>Das passende Molekül bindet an die Bindungsstelle.</li>
+ <li>Das Protein verändert seine räumliche Struktur.</li>
+ <li>Das gebundene Molekül wird auf die andere Membranseite gebracht.</li>
+ <li>Das Molekül wird freigesetzt.</li>
+ <li>Das Carrierprotein kehrt in seine ursprüngliche Form zurück.</li>
+ </ol>
+ `,
+ extra:`
+ <h3>Beispiel: Glucose</h3>
+ <p>Ein Beispiel ist der Transport von Glucose durch die Membran
+ von roten Blutzellen. Steigt der Blutzuckerspiegel, kann Glucose
+ entlang ihres Konzentrationsgefälles in die Zellen gelangen.</p>
+ <p>Dieser Vorgang ist eine Form der erleichterten Diffusion.</p>
+ <div class="highlight">Carrierproteine besitzen eine Bindungsstelle
+ und verändern während des Transports ihre Form.</div>
+ <h3>Fachbegriffe</h3>
+ <ul>
+ <li><b>Carrier:</b> Transportprotein mit Bindungsstelle.</li>
+ <li><b>Bindungsstelle:</b> Bereich, an den ein bestimmtes Molekül bindet.</li>
+ <li><b>Strukturänderung:</b> Veränderung der räumlichen Form eines Proteins.</li>
+ </ul>
+ `,
+ build() {
+   membrane();
+   const p=protein(0,"#f0a34d",1.25);
+   sphere(0,1.8,0,0.18,pink);
+   arrow([0,1.6,0],[0,0.8,0],"#ff779c");
+   arrow([0,-0.8,0],[0,-1.8,0],"#ff779c");
+   textLabel("Bindungsstelle",2.1,1.1,0,"#ffbd76");
+   textLabel("Glucose",1.8,2,0,"#ff779c");
+   textLabel("Formänderung",2,-1.2,0,"#ffbd76");
+   p.rotation.z=0.08;
+ }
+},
+
+active: {
+ title:"Aktiver Transport",
+ tag:"ABSCHNITT 3.6",
+ description:`
+ <h3>Transport gegen das Konzentrationsgefälle</h3>
+ <p>Beim aktiven Transport werden Stoffe gegen ihr
+ <span class="term">Konzentrationsgefälle</span> transportiert.</p>
+ <p>Das bedeutet: Ein Stoff wird von einem Bereich mit niedrigerer
+ Konzentration in einen Bereich mit höherer Konzentration befördert.</p>
+ `,
+ details:`
+ <h3>Woher kommt die Energie?</h3>
+ <p>Der Transport benötigt Energie. Häufig wird diese durch die
+ Spaltung von ATP bereitgestellt.</p>
+ <p>Bei der ATP-Hydrolyse wird ATP zu ADP und anorganischem Phosphat
+ umgewandelt. Dabei wird Energie frei.</p>
+ <p>Diese Energie wird genutzt, um das Transportprotein umzuwandeln
+ und den Stofftransport gegen das Konzentrationsgefälle zu ermöglichen.</p>
+ `,
+ extra:`
+ <h3>ATP-Hydrolyse</h3>
+ <div class="highlight">
+ ATP + Wasser → ADP + Phosphat + Energie
+ </div>
+ <p>Die Energie aus diesem Vorgang ermöglicht die Veränderung des
+ Transportproteins.</p>
+ <h3>Fachbegriffe</h3>
+ <ul>
+ <li><b>Aktiver Transport:</b> Transport gegen das Konzentrationsgefälle
+ unter Energieverbrauch.</li>
+ <li><b>ATP:</b> energiereiches Molekül, das Energie bereitstellen kann.</li>
+ <li><b>ADP:</b> entsteht bei der Abspaltung eines Phosphats von ATP.</li>
+ <li><b>ATP-Hydrolyse:</b> Spaltung von ATP unter Beteiligung von Wasser.</li>
+ </ul>
+ `,
+ build() {
+   membrane();
+   protein(0,"#e99d4c",1.15);
+   particles(18,pink,3,-2.1);
+   arrow([0,-1.8,0],[0,1.8,0],"#ff779c");
+   sphere(2.1,1.4,0,0.3,green);
+   textLabel("ATP",2.1,2.1,0,"#7de0a3");
+   textLabel("ADP + P",2.2,0.7,0,"#7de0a3");
+   textLabel("Transport gegen das Gefälle",0,-2.2,1,"#ff779c");
+ }
+},
+
+types: {
+ title:"Uniport, Symport und Antiport",
+ tag:"ABSCHNITT 3.6",
+ description:`
+ <h3>Drei Transportformen</h3>
+ <p>Transportproteine können Stoffe auf unterschiedliche Weise
+ durch eine Membran befördern.</p>
+ <ul>
+ <li><b>Uniport:</b> Eine einzige Substanz wird transportiert.</li>
+ <li><b>Symport:</b> Zwei verschiedene Substanzen werden gleichzeitig
+ in dieselbe Richtung transportiert.</li>
+ <li><b>Antiport:</b> Zwei verschiedene Substanzen werden gleichzeitig
+ in entgegengesetzte Richtungen transportiert.</li>
+ </ul>
+ `,
+ details:`
+ <h3>Die Unterschiede</h3>
+ <p>Beim Uniport bewegt sich nur eine Stoffart durch das Protein.</p>
+ <p>Beim Symport werden zwei Stoffarten gemeinsam in dieselbe Richtung
+ transportiert.</p>
+ <p>Beim Antiport werden zwei Stoffarten gleichzeitig in
+ entgegengesetzte Richtungen bewegt.</p>
+ `,
+ extra:`
+ <h3>Merke</h3>
+ <div class="highlight">
+ Uniport = eine Stoffart<br>
+ Symport = zwei Stoffarten, gleiche Richtung<br>
+ Antiport = zwei Stoffarten, entgegengesetzte Richtung
+ </div>
+ <p>Diese Begriffe beschreiben die Anzahl und die Richtung der
+ transportierten Stoffe. Sie sagen allein noch nicht aus, ob der
+ Transport aktiv oder passiv ist.</p>
+ `,
+ build() {
+   membrane();
+   protein(-3,"#e99d4c",0.75);
+   protein(0,"#e99d4c",0.75);
+   protein(3,"#e99d4c",0.75);
+
+   sphere(-3,1.4,0,0.14,pink);
+   arrow([-3,1.1,0],[-3,-1.3,0],"#ff779c");
+
+   sphere(-0.25,1.4,0,0.14,pink);
+   sphere(0.25,1.4,0,0.14,green);
+   arrow([0,1.1,0],[0,-1.3,0],"#ff779c");
+
+   sphere(2.7,1.4,0,0.14,pink);
+   sphere(3.3,-1.4,0,0.14,green);
+   arrow([3,1.1,0],[3,-1.1,0],"#ff779c");
+   arrow([3.6,-1.1,0],[3.6,1.1,0],"#7de0a3");
+
+   textLabel("UNIPORT",-3,2.1,0,"#ffbd76");
+   textLabel("SYMPORT",0,2.1,0,"#ffbd76");
+   textLabel("ANTIPORT",3,2.1,0,"#ffbd76");
+ }
+},
+
+plant: {
+ title:"Nitrattransport in Pflanzenwurzeln",
+ tag:"ABSCHNITT 3.6",
+ description:`
+ <h3>Beispiel aus Pflanzenwurzelzellen</h3>
+ <p>Pflanzen benötigen unter anderem Nitrat-Ionen (NO₃⁻).
+ Die Konzentration von Nitrat im Bodenwasser kann geringer sein
+ als in der Pflanzenzelle.</p>
+ <p>Damit die Pflanze trotzdem Nitrat aufnehmen kann, muss es
+ gegen sein Konzentrationsgefälle transportiert werden.</p>
+ `,
+ details:`
+ <h3>Schritt 1: Protonenpumpe</h3>
+ <p>Eine Protonenpumpe transportiert H⁺-Ionen unter Verbrauch
+ von ATP aus der Pflanzenwurzelzelle nach außen.</p>
+ <p>Dadurch entsteht außen eine höhere Konzentration an Protonen.
+ Es bildet sich ein Protonengefälle.</p>
+ <h3>Schritt 2: Nitrat-Carrier</h3>
+ <p>Die Protonen können anschließend entlang ihres Gefälles
+ zurück in die Zelle strömen. Dabei nutzen sie einen Nitrat-Carrier.</p>
+ <p>Der Carrier transportiert gleichzeitig Nitrat-Ionen in die Zelle.
+ Laut Abbildung werden dabei zwei Protonen gemeinsam mit einem
+ Nitrat-Ion aufgenommen.</p>
+ `,
+ extra:`
+ <h3>Warum ist das sekundär aktiver Transport?</h3>
+ <p>Die Energie stammt indirekt aus dem zuvor aufgebauten
+ Protonengefälle. Der Nitrattransport ist mit dem Rückstrom der
+ Protonen gekoppelt.</p>
+ <p>Die Protonenpumpe benötigt ATP direkt. Der Nitrat-Carrier nutzt
+ dagegen das vorhandene Protonengefälle.</p>
+ <div class="highlight">
+ Protonenpumpe = primär aktiver Transport<br>
+ Nitrat-Carrier = sekundär aktiver Transport
+ </div>
+ <h3>Fachbegriffe</h3>
+ <ul>
+ <li><b>Proton:</b> positiv geladenes Wasserstoff-Ion (H⁺).</li>
+ <li><b>Protonengefälle:</b> Unterschied der Protonenkonzentration
+ zwischen zwei Seiten.</li>
+ <li><b>Primär aktiv:</b> Energie wird direkt durch ATP bereitgestellt.</li>
+ <li><b>Sekundär aktiv:</b> Energie eines zuvor aufgebauten
+ Konzentrationsgefälles wird genutzt.</li>
+ <li><b>Nitrat-Ion:</b> negativ geladenes Ion NO₃⁻.</li>
+ </ul>
+ `,
+ build() {
+   membrane();
+   protein(-1.8,"#e99d4c",0.85);
+   protein(1.8,"#e99d4c",0.85);
+
+   for(let i=0;i<8;i++) {
+     sphere(-3.8+i*0.45,1.7,0,0.1,cyan);
+     sphere(0.4+i*0.4,-1.7,0,0.12,green);
+   }
+
+   arrow([-1.8,-1.5,0],[-1.8,1.5,0],"#42d9e8");
+   arrow([1.8,1.5,0],[1.8,-1.5,0],"#7de0a3");
+
+   textLabel("Protonenpumpe",-1.8,2.1,0,"#ffbd76");
+   textLabel("Nitrat-Carrier",1.8,2.1,0,"#ffbd76");
+   textLabel("H⁺", -3.2,1.2,0,"#42d9e8");
+   textLabel("NO₃⁻",3.2,-1.2,0,"#7de0a3");
+ }
+}
+
+};
+
+/* --------------------------------
+   STATION WECHSELN
+-------------------------------- */
+
+function loadStation(id) {
+  current=id;
+  const s=stations[id];
+  clearScene();
+
+  document.getElementById("stationTitle").textContent=s.title;
+  document.getElementById("stationTag").textContent=s.tag;
+
+  document.getElementById("info").innerHTML=`
+    <article class="card">${s.description}</article>
+    <article class="card">${s.details}</article>
+    <article class="card full">${s.extra}</article>
+  `;
+
+  s.build();
+
+  controls.target.set(0,0,0);
+  camera.position.set(8,7,10);
+  controls.update();
+
+  document.querySelectorAll(".navbtn").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.id===id);
+  });
+}
+
+document.querySelectorAll(".navbtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    animationOn=false;
+    document.getElementById("animate").textContent="▶ Animation starten";
+    loadStation(btn.dataset.id);
+  });
+});
+
+/* --------------------------------
+   BEDIENUNG
+-------------------------------- */
+
+document.getElementById("reset").onclick=()=>{
+  camera.position.set(8,7,10);
+  controls.target.set(0,0,0);
+  controls.update();
+};
+
+let labelsVisible=true;
+document.getElementById("labels").onclick=()=>{
+  labelsVisible=!labelsVisible;
+  labels.forEach(l=>l.visible=labelsVisible);
+};
+
+document.getElementById("animate").onclick=()=>{
+  animationOn=!animationOn;
+  document.getElementById("animate").textContent=
+    animationOn?"Ⅱ Animation stoppen":"▶ Animation starten";
+};
+
+/* --------------------------------
+   GRÖSSE UND ANIMATION
+-------------------------------- */
+
+function resize() {
+  const w=canvas.clientWidth;
+  const h=canvas.clientHeight;
+  if(!w || !h) return;
+  camera.aspect=w/h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w,h,false);
+}
+
+window.addEventListener("resize",resize);
+
+const observer=new ResizeObserver(resize);
+observer.observe(canvas);
+
+function render() {
+  requestAnimationFrame(render);
+  controls.update();
+
+  if(animationOn) {
+    const t=performance.now()*0.001;
+
+    objects.forEach((obj,i)=>{
+      if(obj.isGroup && current==="carrier") {
+        obj.rotation.z=Math.sin(t*1.3)*0.12;
+      }
+    });
+
+    moving.forEach(p=>{
+      p.obj.position.y-=p.speed*4;
+      if(p.obj.position.y<p.min) {
+        p.obj.position.y=p.max;
+      }
+    });
+  }
+
+  renderer.render(scene,camera);
+}
+
+loadStation("membrane");
+resize();
 render();
-quiz();
+
 </script>
 </body>
 </html>
