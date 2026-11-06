@@ -4,205 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CELL WORLD – Membrantransport</title>
-
-<style>
-:root {
-  --bg:#07111f;
-  --panel:#101f32;
-  --panel2:#172b42;
-  --text:#f2f6fc;
-  --muted:#a9bbce;
-  --cyan:#42d9e8;
-  --orange:#ffad5c;
-  --green:#7de0a3;
-  --pink:#ff779c;
-}
-* {box-sizing:border-box}
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial, sans-serif;
-}
-header {
-  padding:24px 5%;
-  background:linear-gradient(120deg,#102b48,#102039);
-  border-bottom:1px solid #28435e;
-}
-.logo {
-  font-size:30px;
-  font-weight:900;
-  letter-spacing:3px;
-}
-.logo span {color:var(--cyan)}
-header p {color:var(--muted);margin-bottom:0}
-main {max-width:1500px;margin:auto;padding:24px}
-.intro {
-  padding:24px;
-  background:var(--panel);
-  border:1px solid #29435d;
-  border-radius:18px;
-  margin-bottom:22px;
-}
-.intro h1 {margin-top:0;font-size:26px}
-.intro p {color:var(--muted);line-height:1.7}
-.layout {
-  display:grid;
-  grid-template-columns:260px minmax(0,1fr);
-  gap:20px;
-}
-nav {
-  background:var(--panel);
-  border:1px solid #29435d;
-  border-radius:18px;
-  padding:15px;
-  height:fit-content;
-}
-nav h3 {
-  color:var(--cyan);
-  font-size:13px;
-  letter-spacing:1px;
-  margin:12px 8px;
-}
-.navbtn {
-  width:100%;
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  text-align:left;
-  padding:13px 12px;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:14px;
-  margin:3px 0;
-}
-.navbtn:hover,.navbtn.active {
-  background:#203c58;
-  color:white;
-}
-.navbtn.active {border-left:3px solid var(--cyan)}
-.content {min-width:0}
-.heading {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:15px;
-}
-.heading h2 {margin:0;font-size:25px}
-.tag {
-  color:var(--cyan);
-  border:1px solid #287b8b;
-  padding:6px 11px;
-  border-radius:20px;
-  font-size:12px;
-}
-.viewer {
-  position:relative;
-  height:510px;
-  background:radial-gradient(circle at center,#1b3852,#091523 75%);
-  border:1px solid #29435d;
-  border-radius:18px;
-  overflow:hidden;
-}
-#scene {
-  width:100%;
-  height:100%;
-  display:block;
-  touch-action:none;
-}
-.viewer-help {
-  position:absolute;
-  left:14px;
-  bottom:12px;
-  background:#07111fbb;
-  padding:9px 12px;
-  border-radius:8px;
-  color:#c5d7e8;
-  font-size:12px;
-  pointer-events:none;
-}
-.controls {
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:12px 0 22px;
-}
-.control {
-  background:var(--panel2);
-  color:white;
-  border:1px solid #36516d;
-  padding:10px 14px;
-  border-radius:9px;
-  cursor:pointer;
-}
-.control:hover {background:#294765}
-.info-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-.card {
-  background:var(--panel);
-  border:1px solid #29435d;
-  border-radius:15px;
-  padding:20px;
-  line-height:1.7;
-}
-.card h3 {margin-top:0;color:var(--cyan)}
-.card p {color:#d1deeb}
-.card ul {padding-left:20px;color:#d1deeb}
-.card li {margin-bottom:8px}
-.full {grid-column:1/-1}
-.term {
-  color:var(--orange);
-  font-weight:bold;
-}
-.highlight {
-  border-left:3px solid var(--green);
-  padding:12px 15px;
-  background:#15352e;
-  border-radius:7px;
-  margin-top:13px;
-  color:#d9f7e5;
-}
-.legend {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  margin:12px 0;
-  color:var(--muted);
-  font-size:13px;
-}
-.dot {
-  display:inline-block;
-  width:10px;height:10px;
-  border-radius:50%;
-  margin-right:5px;
-}
-footer {
-  text-align:center;
-  color:#738ba3;
-  padding:35px 10px;
-  font-size:12px;
-}
-@media(max-width:850px) {
-  .layout {grid-template-columns:1fr}
-  nav {display:grid;grid-template-columns:1fr 1fr}
-  nav h3 {grid-column:1/-1}
-  .viewer {height:400px}
-}
-@media(max-width:550px) {
-  main {padding:13px}
-  .info-grid {grid-template-columns:1fr}
-  .full {grid-column:auto}
-  nav {grid-template-columns:1fr}
-  .viewer {height:340px}
-  .heading h2 {font-size:21px}
-}
-</style>
+<title>CELL WORLD | Membrantransport</title>
 
 <script type="importmap">
 {
@@ -212,252 +14,548 @@ footer {
   }
 }
 </script>
+
+<style>
+:root {
+  --bg:#071321;
+  --panel:#102238;
+  --panel2:#172d45;
+  --border:#29445e;
+  --text:#f3f7fc;
+  --muted:#a9bbcd;
+  --cyan:#42d9e8;
+  --orange:#ffb15f;
+  --pink:#ff789b;
+  --green:#80e2a4;
+  --purple:#b99aff;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+}
+header {
+  padding:23px 5%;
+  background:linear-gradient(115deg,#102b47,#102039);
+  border-bottom:1px solid var(--border);
+}
+.logo {
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+.logo span {color:var(--cyan)}
+header p {
+  color:var(--muted);
+  margin:7px 0 0;
+}
+main {
+  max-width:1500px;
+  margin:auto;
+  padding:24px;
+}
+.intro,.card,.sidebar {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+.intro {
+  padding:23px;
+  margin-bottom:22px;
+}
+.intro h1 {margin-top:0}
+.intro p {
+  color:var(--muted);
+  line-height:1.7;
+}
+.scope {
+  display:inline-block;
+  color:var(--cyan);
+  border:1px solid #287b8b;
+  border-radius:20px;
+  padding:7px 12px;
+  font-size:12px;
+}
+.layout {
+  display:grid;
+  grid-template-columns:255px minmax(0,1fr);
+  gap:20px;
+}
+.sidebar {
+  padding:14px;
+  height:fit-content;
+}
+.navheading {
+  color:var(--cyan);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+  margin:15px 9px 8px;
+}
+.navbtn {
+  display:block;
+  width:100%;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  padding:12px;
+  text-align:left;
+  border-radius:9px;
+  cursor:pointer;
+  font-size:14px;
+  margin:3px 0;
+}
+.navbtn:hover,.navbtn.active {
+  background:#203c58;
+  color:white;
+}
+.navbtn.active {
+  border-left:3px solid var(--cyan);
+}
+.content {min-width:0}
+.heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.heading h2 {
+  margin:0;
+  font-size:25px;
+}
+.tag {
+  border:1px solid #287b8b;
+  color:var(--cyan);
+  border-radius:20px;
+  padding:7px 12px;
+  font-size:12px;
+}
+.viewer {
+  position:relative;
+  height:520px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  background:radial-gradient(circle at center,#1c3b56,#081522 75%);
+}
+#scene {
+  display:block;
+  width:100%;
+  height:100%;
+  touch-action:none;
+}
+.viewer-help {
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  color:#d3e3f2;
+  background:#071321dd;
+  border:1px solid #35506a;
+  padding:9px 12px;
+  border-radius:8px;
+  font-size:12px;
+  pointer-events:none;
+}
+.controls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0;
+}
+.control {
+  background:var(--panel2);
+  border:1px solid #38536e;
+  color:white;
+  padding:11px 15px;
+  border-radius:9px;
+  cursor:pointer;
+}
+.control:hover {background:#294967}
+.control.primary {
+  background:#126477;
+  border-color:#2a9bac;
+}
+.stepbox {
+  background:#102238;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:17px;
+  margin:14px 0 18px;
+}
+.step-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.step-top h3 {
+  margin:0;
+  color:var(--cyan);
+}
+#stepCounter {
+  color:var(--muted);
+  font-size:12px;
+}
+#stepText {
+  color:#d6e3ef;
+  line-height:1.7;
+  min-height:50px;
+}
+.stepbuttons {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.info-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.card {
+  padding:20px;
+  line-height:1.7;
+  min-width:0;
+}
+.card h3 {
+  color:var(--cyan);
+  margin-top:0;
+}
+.card p,.card li {color:#d1deeb}
+.card li {margin-bottom:7px}
+.card ul,.card ol {padding-left:22px}
+.full {grid-column:1/-1}
+.term {
+  color:var(--orange);
+  font-weight:bold;
+}
+.highlight {
+  background:#15372f;
+  border-left:3px solid var(--green);
+  padding:13px;
+  border-radius:7px;
+  color:#e0f7e8;
+  margin-top:14px;
+}
+.legend {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  color:var(--muted);
+  font-size:12px;
+  margin:13px 0 18px;
+}
+.dot {
+  width:10px;
+  height:10px;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:5px;
+}
+footer {
+  text-align:center;
+  padding:35px;
+  color:#718aa2;
+  font-size:12px;
+}
+@media(max-width:850px) {
+  main {padding:14px}
+  .layout {grid-template-columns:1fr}
+  .sidebar {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3px;
+  }
+  .navheading {grid-column:1/-1}
+  .viewer {height:420px}
+}
+@media(max-width:540px) {
+  .sidebar {grid-template-columns:1fr}
+  .navheading {grid-column:auto}
+  .info-grid {grid-template-columns:1fr}
+  .full {grid-column:auto}
+  .viewer {height:350px}
+  .heading h2 {font-size:21px}
+  main {padding:11px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="logo">CELL <span>WORLD</span></div>
-  <p>Eine interaktive 3D-Lernwelt zum Membrantransport</p>
+  <p>Entdecke den Membrantransport in einer interaktiven 3D-Lernwelt</p>
 </header>
 
 <main>
 
 <section class="intro">
-  <h1>Willkommen in der Welt des Membrantransports</h1>
+  <h1>Willkommen in CELL WORLD</h1>
   <p>
-    Erkunde die Zellmembran und entdecke, wie unterschiedliche Stoffe
-    durch sie hindurchtransportiert werden. Drehe die 3D-Modelle,
-    betrachte sie aus verschiedenen Perspektiven und lerne die
-    biologischen Vorgänge Schritt für Schritt.
+    Hier kannst du die Vorgänge an der Zellmembran räumlich erkunden.
+    Drehe die Modelle, zoome hinein und betrachte die einzelnen
+    Transportvorgänge Schritt für Schritt.
   </p>
-  <p>
-    Inhaltlicher Umfang: ausschließlich die Schulbuchabschnitte
-    <strong>3.5 und 3.6</strong>.
-  </p>
+  <span class="scope">SCHULBUCH · ABSCHNITTE 3.5 UND 3.6</span>
 </section>
 
 <div class="layout">
 
-<nav>
-  <h3>3.5 · ERLEICHTERTE DIFFUSION</h3>
+<nav class="sidebar">
+  <div class="navheading">3.5 · ERLEICHTERTE DIFFUSION</div>
   <button class="navbtn active" data-id="membrane">01 · Biomembran</button>
-  <button class="navbtn" data-id="aqua">02 · Aquaporine</button>
-  <button class="navbtn" data-id="channel">03 · Ionenkanäle</button>
+  <button class="navbtn" data-id="aquaporin">02 · Aquaporine</button>
+  <button class="navbtn" data-id="channels">03 · Ionenkanäle</button>
   <button class="navbtn" data-id="carrier">04 · Carrierproteine</button>
 
-  <h3>3.6 · AKTIVER TRANSPORT</h3>
-  <button class="navbtn" data-id="active">05 · Aktiver Transport</button>
-  <button class="navbtn" data-id="types">06 · Transportformen</button>
-  <button class="navbtn" data-id="plant">07 · Pflanzenwurzel</button>
+  <div class="navheading">3.6 · AKTIVER TRANSPORT</div>
+  <button class="navbtn" data-id="active">05 · ATP und aktiver Transport</button>
+  <button class="navbtn" data-id="transport">06 · Uni-, Sym- und Antiport</button>
+  <button class="navbtn" data-id="plant">07 · Nitrattransport</button>
 </nav>
 
 <section class="content">
 
 <div class="heading">
-  <h2 id="stationTitle">Die Biomembran</h2>
-  <span class="tag" id="stationTag">ABSCHNITT 3.5</span>
+  <h2 id="title">Die Biomembran</h2>
+  <span class="tag" id="tag">ABSCHNITT 3.5</span>
 </div>
 
 <div class="viewer">
   <canvas id="scene"></canvas>
   <div class="viewer-help">
-    Ziehen = drehen · Zwei Finger = zoomen · Mausrad = zoomen
+    Finger ziehen = drehen · Zwei Finger = zoomen · Mausrad = zoomen
   </div>
 </div>
 
 <div class="controls">
   <button class="control" id="reset">↻ Ansicht zurücksetzen</button>
-  <button class="control" id="labels">Beschriftungen an/aus</button>
-  <button class="control" id="animate">▶ Animation starten</button>
+  <button class="control" id="labels">Beschriftungen ausblenden</button>
+  <button class="control primary" id="play">▶ Animation starten</button>
 </div>
 
 <div class="legend">
-  <span><i class="dot" style="background:#ffad5c"></i>Transportproteine</span>
-  <span><i class="dot" style="background:#ff779c"></i>Transportierte Stoffe</span>
+  <span><i class="dot" style="background:#e8b45f"></i>Membranlipide</span>
+  <span><i class="dot" style="background:#ffad5c"></i>Proteine</span>
+  <span><i class="dot" style="background:#ff789b"></i>Glucose / Stoffe</span>
   <span><i class="dot" style="background:#42d9e8"></i>Wasser / Protonen</span>
-  <span><i class="dot" style="background:#7de0a3"></i>Weitere Ionen</span>
+  <span><i class="dot" style="background:#80e2a4"></i>Ionen / Nitrat</span>
 </div>
 
-<div class="info-grid" id="info">
-</div>
+<section class="stepbox">
+  <div class="step-top">
+    <h3 id="stepTitle">So funktioniert es</h3>
+    <span id="stepCounter">Schritt 1</span>
+  </div>
+  <p id="stepText"></p>
+  <div class="stepbuttons">
+    <button class="control" id="previous">← Zurück</button>
+    <button class="control primary" id="next">Nächster Schritt →</button>
+  </div>
+</section>
+
+<div class="info-grid" id="information"></div>
 
 </section>
 </div>
 </main>
 
 <footer>
-CELL WORLD · Biologie · Schulbuchabschnitte 3.5 und 3.6
+  CELL WORLD · Biologie · Schulbuchabschnitte 3.5 und 3.6
 </footer>
 
 <script type="module">
 import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 
-/* --------------------------------
-   GRUNDLAGEN DER 3D-SZENE
--------------------------------- */
+/* ==========================================
+   1. GRUNDLEGENDE 3D-EINSTELLUNGEN
+========================================== */
 
 const canvas = document.getElementById("scene");
-
 const scene = new THREE.Scene();
-scene.background = new THREE.Color("#0a1929");
+scene.background = new THREE.Color("#091827");
 
-const camera = new THREE.PerspectiveCamera(
-  45, 1, 0.1, 100
-);
-camera.position.set(8,7,10);
+const camera = new THREE.PerspectiveCamera(43,1,0.1,100);
+camera.position.set(8,6,10);
 
 const renderer = new THREE.WebGLRenderer({
   canvas,
   antialias:true
 });
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-renderer.shadowMap.enabled = true;
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.shadowMap.enabled=true;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
 
 const controls = new OrbitControls(camera,renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.06;
-controls.minDistance = 4;
-controls.maxDistance = 19;
+controls.enableDamping=true;
+controls.dampingFactor=0.06;
+controls.minDistance=3.5;
+controls.maxDistance=20;
 controls.target.set(0,0,0);
 
-scene.add(new THREE.AmbientLight(0xffffff,1.5));
+scene.add(new THREE.HemisphereLight(0xffffff,0x35516d,2));
 
-const light = new THREE.DirectionalLight(0xffffff,2.5);
-light.position.set(5,9,8);
-scene.add(light);
+const mainLight = new THREE.DirectionalLight(0xffffff,2.5);
+mainLight.position.set(5,8,7);
+mainLight.castShadow=true;
+scene.add(mainLight);
 
-const light2 = new THREE.PointLight(0x42d9e8,30,30);
-light2.position.set(-5,2,4);
-scene.add(light2);
+const fillLight = new THREE.PointLight(0x42d9e8,25,25);
+fillLight.position.set(-5,2,4);
+scene.add(fillLight);
 
-let objects = [];
-let labels = [];
-let moving = [];
-let animationOn = false;
-let current = "membrane";
+const colors = {
+  membrane:"#e8b45f",
+  head:"#9b7bc5",
+  protein:"#f0a34d",
+  water:"#42d9e8",
+  glucose:"#ff789b",
+  ion:"#80e2a4",
+  purple:"#b99aff",
+  dark:"#152e43"
+};
 
-function add(obj) {
-  scene.add(obj);
-  objects.push(obj);
-  return obj;
-}
-
-function material(color,roughness=0.55) {
+function mat(color,roughness=0.55) {
   return new THREE.MeshStandardMaterial({
     color,
     roughness,
-    metalness:0.05
+    metalness:0.03
   });
 }
 
-const gold = material("#e5ad55");
-const purple = material("#7659a5");
-const orange = material("#f0a34d");
-const pink = material("#ff779c");
-const cyan = material("#42d9e8");
-const green = material("#7de0a3");
-const dark = material("#213b50");
+const materials={};
+for(const [key,value] of Object.entries(colors)) {
+  materials[key]=mat(value);
+}
 
-function sphere(x,y,z,r,color) {
-  const mesh = new THREE.Mesh(
+let objects=[];
+let animatedObjects=[];
+let currentStation="membrane";
+let currentStep=0;
+let playing=false;
+let labelsVisible=true;
+let lastTime=0;
+
+function add(object) {
+  scene.add(object);
+  objects.push(object);
+  return object;
+}
+
+function sphere(x,y,z,r,material) {
+  const mesh=new THREE.Mesh(
     new THREE.SphereGeometry(r,24,18),
-    color
+    material
+  );
+  mesh.position.set(x,y,z);
+  mesh.castShadow=true;
+  mesh.receiveShadow=true;
+  return add(mesh);
+}
+
+function box(x,y,z,w,h,d,material) {
+  const mesh=new THREE.Mesh(
+    new THREE.BoxGeometry(w,h,d),
+    material
   );
   mesh.position.set(x,y,z);
   mesh.castShadow=true;
   return add(mesh);
 }
 
-function cylinder(x,y,z,r1,r2,h,color) {
-  const mesh = new THREE.Mesh(
-    new THREE.CylinderGeometry(r1,r2,h,20),
-    color
+function arrow(start,end,color="#42d9e8") {
+  const a=new THREE.Vector3(...start);
+  const b=new THREE.Vector3(...end);
+  const direction=b.clone().sub(a).normalize();
+  const helper=new THREE.ArrowHelper(
+    direction,a,a.distanceTo(b),color,0.35,0.2
   );
-  mesh.position.set(x,y,z);
-  mesh.castShadow=true;
-  return add(mesh);
+  return add(helper);
 }
 
-function textLabel(text,x,y,z,color="#ffffff") {
-  const canvas2=document.createElement("canvas");
-  const ctx=canvas2.getContext("2d");
-  canvas2.width=512;
-  canvas2.height=128;
-  ctx.fillStyle="rgba(5,17,31,0.88)";
-  ctx.roundRect(4,4,504,120,18);
+function label(text,x,y,z,color="#ffffff") {
+  const c=document.createElement("canvas");
+  c.width=512;
+  c.height=128;
+  const ctx=c.getContext("2d");
+
+  ctx.fillStyle="rgba(5,18,31,0.92)";
+  ctx.beginPath();
+  ctx.roundRect(5,5,502,118,18);
   ctx.fill();
+
   ctx.font="bold 34px Arial";
   ctx.fillStyle=color;
   ctx.textAlign="center";
   ctx.textBaseline="middle";
   ctx.fillText(text,256,64);
 
-  const texture=new THREE.CanvasTexture(canvas2);
+  const texture=new THREE.CanvasTexture(c);
+  texture.colorSpace=THREE.SRGBColorSpace;
+
   const sprite=new THREE.Sprite(
-    new THREE.SpriteMaterial({map:texture,transparent:true})
+    new THREE.SpriteMaterial({
+      map:texture,
+      transparent:true,
+      depthTest:false
+    })
   );
   sprite.position.set(x,y,z);
-  sprite.scale.set(3.1,0.78,1);
-  add(sprite);
-  labels.push(sprite);
-}
-
-function arrow(from,to,color="#42d9e8") {
-  const a=new THREE.Vector3(...from);
-  const b=new THREE.Vector3(...to);
-  const direction=new THREE.Vector3().subVectors(b,a).normalize();
-  const length=a.distanceTo(b);
-  const helper=new THREE.ArrowHelper(
-    direction,a,length,color,0.4,0.22
-  );
-  add(helper);
+  sprite.scale.set(3.0,0.75,1);
+  sprite.userData.isLabel=true;
+  return add(sprite);
 }
 
 function clearScene() {
-  for(const obj of objects) {
-    scene.remove(obj);
-    if(obj.geometry) obj.geometry.dispose();
-    if(obj.material) {
-      if(Array.isArray(obj.material)) {
-        obj.material.forEach(m=>m.dispose());
-      } else obj.material.dispose();
+  for(const object of objects) {
+    scene.remove(object);
+    if(object.geometry) object.geometry.dispose();
+    if(object.material) {
+      if(Array.isArray(object.material)) {
+        object.material.forEach(m=>m.dispose());
+      } else {
+        object.material.dispose();
+      }
     }
   }
   objects=[];
-  labels=[];
-  moving=[];
+  animatedObjects=[];
 }
 
-/* --------------------------------
-   BIOMEMBRAN
--------------------------------- */
+/* ==========================================
+   2. MODELL DER LIPIDDOPPELSCHICHT
+========================================== */
 
-function membrane(protein=false) {
+function buildMembrane(width=10) {
   const group=new THREE.Group();
 
-  for(let row of [-1,1]) {
-    for(let i=-5;i<=5;i++) {
-      const x=i*0.48;
+  const count=Math.floor(width/0.42);
+
+  for(let i=0;i<=count;i++) {
+    const x=-width/2+i*0.42;
+
+    for(const side of [-1,1]) {
       const head=new THREE.Mesh(
-        new THREE.SphereGeometry(0.14,16,12),
-        purple
+        new THREE.SphereGeometry(0.15,18,14),
+        materials.head
       );
-      head.position.set(x,row*0.78,0);
+      head.position.set(x,side*0.77,0);
       group.add(head);
 
-      const tail1=new THREE.Mesh(
-        new THREE.CylinderGeometry(0.045,0.055,0.52,10),
-        gold
-      );
-      tail1.position.set(x,row*0.43,0);
-      group.add(tail1);
-
-      const tail2=tail1.clone();
-      tail2.position.x+=0.12;
-      tail2.rotation.z=0.12;
-      group.add(tail2);
+      for(let offset of [-0.075,0.075]) {
+        const tail=new THREE.Mesh(
+          new THREE.CylinderGeometry(0.045,0.055,0.58,10),
+          materials.membrane
+        );
+        tail.position.set(x+offset,side*0.39,0);
+        tail.rotation.z=offset*0.5;
+        group.add(tail);
+      }
     }
   }
 
@@ -468,508 +566,685 @@ function membrane(protein=false) {
     }
   });
 
-  add(group);
-  return group;
+  return add(group);
 }
 
-function protein(x=0,color="#f0a34d",scale=1) {
-  const group=new THREE.Group();
-  const body=new THREE.Mesh(
-    new THREE.CapsuleGeometry(0.42,1.05,8,16),
-    material(color)
-  );
-  body.scale.set(1,1,0.85);
-  group.add(body);
+/* ==========================================
+   3. TRANSPORTPROTEINE
+========================================== */
 
-  const opening=new THREE.Mesh(
-    new THREE.CylinderGeometry(0.18,0.18,1.6,24),
-    material("#172b42")
+function buildProtein(x=0,scale=1) {
+  const group=new THREE.Group();
+
+  const outer=new THREE.Mesh(
+    new THREE.CapsuleGeometry(0.43,1.05,8,20),
+    materials.protein
   );
-  opening.position.set(0,0,0.05);
-  group.add(opening);
+  outer.scale.set(1,1,0.8);
+  group.add(outer);
+
+  const passage=new THREE.Mesh(
+    new THREE.CylinderGeometry(0.17,0.17,1.8,24),
+    materials.dark
+  );
+  passage.position.z=0.12;
+  group.add(passage);
+
+  const rim1=new THREE.Mesh(
+    new THREE.TorusGeometry(0.29,0.09,12,28),
+    materials.protein
+  );
+  rim1.position.y=0.65;
+  group.add(rim1);
+
+  const rim2=rim1.clone();
+  rim2.position.y=-0.65;
+  group.add(rim2);
 
   group.position.set(x,0,0);
   group.scale.setScalar(scale);
-  add(group);
-  return group;
+  group.userData.isProtein=true;
+
+  return add(group);
 }
 
-function particles(count,color,range=4,y=2) {
-  for(let i=0;i<count;i++) {
-    const x=(Math.random()-0.5)*range*2;
-    const z=(Math.random()-0.5)*1.3;
-    const yy=y+(Math.random()-0.5)*0.7;
-    const p=sphere(x,yy,z,0.09,color);
-    moving.push({
-      obj:p,
-      speed:0.008+Math.random()*0.015,
-      min:-2.2,
-      max:2.4
+function addParticle(x,y,z,color=materials.glucose,r=0.11) {
+  const p=sphere(x,y,z,r,color);
+  return p;
+}
+
+function resetCamera() {
+  camera.position.set(8,6,10);
+  controls.target.set(0,0,0);
+  controls.update();
+}
+
+/* ==========================================
+   4. STATIONEN UND LERNINHALTE
+========================================== */
+
+const stations={
+
+membrane:{
+  title:"Die Biomembran",
+  tag:"ABSCHNITT 3.5",
+  steps:[
+    "Die Biomembran besteht aus einer Lipiddoppelschicht. Sie bildet eine Abgrenzung zwischen dem Zellinneren und dem Außenraum.",
+    "Die hydrophilen Köpfe sind dem Wasser zugewandt. Sie befinden sich an den beiden Außenseiten der Membran.",
+    "Die hydrophoben Bereiche liegen im Inneren der Membran. Sie weisen Wasser ab.",
+    "Das hydrophobe Innere erschwert wasserlöslichen Stoffen wie Glucose den direkten Durchtritt."
+  ],
+  description:`
+    <h3>Aufbau der Biomembran</h3>
+    <p>Die Biomembran besteht aus einer <span class="term">Lipiddoppelschicht</span>.
+    Sie grenzt das Zellinnere von seiner Umgebung ab.</p>
+    <p>Die Lipide besitzen zwei unterschiedliche Bereiche:
+    einen hydrophilen Kopf und einen hydrophoben Bereich.</p>
+    <h3>Die beiden Bereiche</h3>
+    <ul>
+      <li><b>Hydrophiler Kopf:</b> wasserliebend und dem wässrigen Umfeld zugewandt.</li>
+      <li><b>Hydrophober Bereich:</b> wasserabweisend und im Inneren der Membran angeordnet.</li>
+    </ul>
+  `,
+  details:`
+    <h3>Selektive Permeabilität</h3>
+    <p>Das Innere der Lipiddoppelschicht ist hydrophob. Deshalb können
+    wasserlösliche Stoffe wie Glucose die Membran nicht ohne Weiteres
+    durchqueren.</p>
+    <p>Die Membran ist <span class="term">selektiv permeabel</span>.
+    Das bedeutet, dass sie für manche Stoffe durchlässig ist und
+    andere Stoffe zurückhält.</p>
+    <div class="highlight">Die Membran beeinflusst, welche Stoffe in eine
+    Zelle hinein- oder aus ihr herausgelangen können.</div>
+  `,
+  terms:`
+    <h3>Fachbegriffe</h3>
+    <ul>
+      <li><b>Biomembran:</b> Abgrenzung einer Zelle oder eines Zellbereichs.</li>
+      <li><b>Lipiddoppelschicht:</b> doppelte Schicht aus Lipiden.</li>
+      <li><b>Hydrophil:</b> wasserliebend.</li>
+      <li><b>Hydrophob:</b> wasserabweisend.</li>
+      <li><b>Selektiv permeabel:</b> nur für bestimmte Stoffe durchlässig.</li>
+      <li><b>Permeabilität:</b> Durchlässigkeit einer Membran.</li>
+    </ul>
+  `,
+  build() {
+    buildMembrane();
+    label("Hydrophile Köpfe",0,1.55,0,"#d1b8ff");
+    label("Hydrophober Innenbereich",0,0,1,"#ffcf86");
+    label("Lipiddoppelschicht",0,-1.7,0,"#42d9e8");
+
+    for(let i=0;i<12;i++) {
+      addParticle(-4.5+i*0.8,2.2,0,materials.water,0.09);
+    }
+  }
+},
+
+aquaporin:{
+  title:"Aquaporine – Wasserkanäle",
+  tag:"ABSCHNITT 3.5",
+  steps:[
+    "Aquaporine sind spezielle Kanalproteine in der Biomembran.",
+    "Wassermoleküle gelangen in den engen Kanal des Aquaporins.",
+    "Sie bewegen sich durch den Kanal hindurch auf die andere Membranseite.",
+    "Aquaporine ermöglichen eine schnelle Diffusion von Wasser. Protonen werden am Durchtritt gehindert."
+  ],
+  description:`
+    <h3>Was sind Aquaporine?</h3>
+    <p><span class="term">Aquaporine</span> sind spezielle Kanalproteine
+    in Biomembranen. Sie ermöglichen Wasser eine schnelle Diffusion
+    durch die Membran.</p>
+    <p>Die Wassermoleküle gelangen durch einen engen Kanal im Protein
+    auf die andere Seite der Membran.</p>
+  `,
+  details:`
+    <h3>Der Wassertransport</h3>
+    <ol>
+      <li>Wasser befindet sich auf einer Seite der Membran.</li>
+      <li>Wassermoleküle gelangen in den Kanal des Aquaporins.</li>
+      <li>Sie bewegen sich durch den Kanal.</li>
+      <li>Auf der anderen Seite treten sie wieder aus.</li>
+    </ol>
+    <p>Dieser Transport erfolgt durch Diffusion und benötigt keine
+    zusätzliche Energiezufuhr durch ATP.</p>
+    <div class="highlight">Aquaporine sind auf den Transport von Wasser spezialisiert.</div>
+  `,
+  terms:`
+    <h3>Fachbegriffe</h3>
+    <ul>
+      <li><b>Aquaporin:</b> Kanalprotein für Wasser.</li>
+      <li><b>Kanalprotein:</b> Protein, das einen Durchgang durch die Membran bildet.</li>
+      <li><b>Diffusion:</b> Bewegung von Teilchen entlang ihres Konzentrationsgefälles.</li>
+      <li><b>Proton:</b> positiv geladenes Wasserstoff-Ion (H⁺).</li>
+    </ul>
+  `,
+  build() {
+    buildMembrane();
+    buildProtein(0,1.15);
+    label("Aquaporin",2.1,0.4,0,"#ffbd76");
+    label("Wasser",2,1.8,0,"#42d9e8");
+    arrow([0,2.1,0],[0,-2.1,0],"#42d9e8");
+
+    for(let i=0;i<9;i++) {
+      const p=addParticle(-0.2+(i%3)*0.2,2.3+Math.floor(i/3)*0.2,0,materials.water,0.1);
+      animatedObjects.push({
+        object:p,
+        startY:2.3+Math.floor(i/3)*0.2,
+        endY:-2.2,
+        speed:0.65,
+        activeFrom:1
+      });
+    }
+  }
+},
+
+channels:{
+  title:"Ionenkanäle",
+  tag:"ABSCHNITT 3.5",
+  steps:[
+    "Ionen sind elektrisch geladene Teilchen. Sie können den hydrophoben Innenbereich der Membran nicht einfach durchqueren.",
+    "Ein Ionenkanal bildet einen Durchgang durch die Membran.",
+    "Der Kanal lässt nur bestimmte Ionen passieren. Er ist also selektiv.",
+    "Wenn der Kanal geöffnet ist, können passende Ionen entlang ihres Konzentrationsgefälles hindurchdiffundieren."
+  ],
+  description:`
+    <h3>Erleichterte Diffusion durch Kanäle</h3>
+    <p>Bestimmte Ionen können die hydrophobe Membran nicht einfach
+    durchqueren. Dafür gibt es <span class="term">Ionenkanäle</span>.</p>
+    <p>Diese Kanalproteine ermöglichen bestimmten Ionen den Durchtritt
+    durch die Membran.</p>
+  `,
+  details:`
+    <h3>Selektivität und Steuerung</h3>
+    <p>Ionenkanäle sind selektiv: Sie lassen nur bestimmte Ionen passieren.
+    Manche Kanäle können durch elektrische oder chemische Signale
+    geöffnet oder geschlossen werden.</p>
+    <p>Beispiele für Ionen, die durch entsprechende Kanäle transportiert
+    werden können, sind Natrium- und Kalium-Ionen.</p>
+    <div class="highlight">Der Transport durch einen geöffneten Ionenkanal
+    erfolgt passiv entlang des Konzentrationsgefälles.</div>
+  `,
+  terms:`
+    <h3>Fachbegriffe</h3>
+    <ul>
+      <li><b>Ion:</b> elektrisch geladenes Teilchen.</li>
+      <li><b>Ionenkanal:</b> selektives Kanalprotein für bestimmte Ionen.</li>
+      <li><b>Selektivität:</b> bestimmte Stoffe werden bevorzugt durchgelassen.</li>
+      <li><b>Konzentrationsgefälle:</b> Unterschied der Konzentration zwischen zwei Bereichen.</li>
+      <li><b>Erleichterte Diffusion:</b> passiver Transport mithilfe von Membranproteinen.</li>
+    </ul>
+  `,
+  build() {
+    buildMembrane();
+    buildProtein(0,1.1);
+    label("Ionenkanal",2.1,0.4,0,"#ffbd76");
+    label("Ionen",2,1.8,0,"#80e2a4");
+    arrow([0,2.1,0],[0,-2.1,0],"#80e2a4");
+
+    for(let i=0;i<9;i++) {
+      const p=addParticle(-0.2+(i%3)*0.2,2.3+Math.floor(i/3)*0.2,0,materials.ion,0.1);
+      animatedObjects.push({
+        object:p,
+        startY:2.3+Math.floor(i/3)*0.2,
+        endY:-2.2,
+        speed:0.6,
+        activeFrom:2
+      });
+    }
+  }
+},
+
+carrier:{
+  title:"Carrierproteine",
+  tag:"ABSCHNITT 3.5",
+  steps:[
+    "Ein bestimmtes Molekül bindet an eine passende Bindungsstelle des Carrierproteins.",
+    "Durch die Bindung verändert das Protein seine räumliche Struktur.",
+    "Das gebundene Molekül wird auf die andere Seite der Membran gebracht.",
+    "Das Molekül wird freigesetzt. Das Carrierprotein kann anschließend seine ursprüngliche Form wieder einnehmen."
+  ],
+  description:`
+    <h3>Was machen Carrierproteine?</h3>
+    <p><span class="term">Carrierproteine</span> transportieren bestimmte
+    Moleküle oder Ionen durch die Biomembran.</p>
+    <p>Das zu transportierende Molekül bindet zunächst an eine passende
+    Bindungsstelle des Proteins.</p>
+  `,
+  details:`
+    <h3>Der Transport in vier Schritten</h3>
+    <ol>
+      <li>Das Molekül bindet an die Bindungsstelle.</li>
+      <li>Das Protein verändert seine räumliche Struktur.</li>
+      <li>Das Molekül gelangt auf die andere Membranseite.</li>
+      <li>Das Molekül wird freigesetzt.</li>
+    </ol>
+    <h3>Beispiel: Glucose</h3>
+    <p>Glucose kann mithilfe von Carrierproteinen durch die Membran
+    roter Blutzellen transportiert werden. Dabei kann sie entlang
+    ihres Konzentrationsgefälles in die Zelle gelangen.</p>
+  `,
+  terms:`
+    <h3>Fachbegriffe</h3>
+    <ul>
+      <li><b>Carrierprotein:</b> Transportprotein mit einer Bindungsstelle.</li>
+      <li><b>Bindungsstelle:</b> Bereich, an den ein bestimmtes Molekül bindet.</li>
+      <li><b>Strukturänderung:</b> Veränderung der räumlichen Form eines Proteins.</li>
+      <li><b>Glucose:</b> Traubenzucker, ein wichtiger Energielieferant der Zelle.</li>
+    </ul>
+    <div class="highlight">Carrierproteine verändern während des Transports
+    ihre räumliche Form.</div>
+  `,
+  build() {
+    buildMembrane();
+    const p=buildProtein(0,1.15);
+    label("Carrierprotein",2.1,0.5,0,"#ffbd76");
+    label("Bindungsstelle",2,1.5,0,"#ffbd76");
+    label("Glucose",0,2.1,0,"#ff789b");
+
+    const g=addParticle(0,2.1,0,materials.glucose,0.19);
+    animatedObjects.push({
+      object:g,
+      startY:2.1,
+      endY:-2.1,
+      speed:0.55,
+      activeFrom:1
+    });
+
+    animatedObjects.push({
+      object:p,
+      rotation:true,
+      amount:0.28,
+      activeFrom:2
     });
   }
-}
-
-/* --------------------------------
-   STATIONEN
--------------------------------- */
-
-const stations = {
-
-membrane: {
- title:"Die Biomembran",
- tag:"ABSCHNITT 3.5",
- description:`
- <h3>Aufbau der Biomembran</h3>
- <p>Die Biomembran besteht aus einer <span class="term">Lipiddoppelschicht</span>.
- Sie bildet eine Abgrenzung zwischen dem Zellinneren und dem Außenraum.</p>
- <p>Die Lipide besitzen zwei unterschiedliche Bereiche:</p>
- <ul>
- <li><span class="term">Hydrophiler Kopf:</span> wasserliebend und dem wässrigen Umfeld zugewandt.</li>
- <li><span class="term">Hydrophober Bereich:</span> wasserabweisend und im Inneren der Membran angeordnet.</li>
- </ul>
- `,
- details:`
- <h3>Selektive Permeabilität</h3>
- <p>Das Innere der Lipiddoppelschicht ist hydrophob. Deshalb können
- wasserlösliche Stoffe wie Glucose die Membran nicht ohne Weiteres
- durchqueren.</p>
- <p>Die Membran ist <span class="term">selektiv permeabel</span>:
- Sie lässt bestimmte Stoffe passieren, während andere zurückgehalten
- werden.</p>
- <div class="highlight">Die Membran entscheidet also mit darüber,
- welche Stoffe in eine Zelle hinein- oder aus ihr herausgelangen.</div>
- `,
- extra:`
- <h3>Wichtige Fachbegriffe</h3>
- <ul>
- <li><b>Permeabilität:</b> Durchlässigkeit einer Membran.</li>
- <li><b>Hydrophil:</b> wasserliebend.</li>
- <li><b>Hydrophob:</b> wasserabweisend.</li>
- <li><b>Lipiddoppelschicht:</b> doppelte Schicht aus Lipiden.</li>
- <li><b>Selektiv permeabel:</b> nur für bestimmte Stoffe durchlässig.</li>
- </ul>
- `,
- build() {
-   membrane();
-   particles(20,pink,4,2.2);
-   textLabel("Hydrophile Köpfe",0,1.8,0,"#c7a9ff");
-   textLabel("Hydrophober Innenbereich",0,0,0.8,"#ffce83");
-   textLabel("Zellmembran",0,-1.8,0,"#42d9e8");
- }
 },
 
-aqua: {
- title:"Aquaporine – Wasserkanäle",
- tag:"ABSCHNITT 3.5",
- description:`
- <h3>Was sind Aquaporine?</h3>
- <p><span class="term">Aquaporine</span> sind spezielle Kanalproteine
- in Biomembranen. Sie ermöglichen Wasser eine schnelle Diffusion
- durch die Membran.</p>
- <p>Wassermoleküle können durch den engen Kanal hindurchtreten.
- Der Kanal ist so aufgebaut, dass Protonen am Durchtritt gehindert werden.</p>
- `,
- details:`
- <h3>Wie funktioniert der Wassertransport?</h3>
- <ol>
- <li>Wassermoleküle befinden sich auf einer Seite der Membran.</li>
- <li>Sie gelangen in den Kanal des Aquaporins.</li>
- <li>Sie bewegen sich durch den Kanal hindurch.</li>
- <li>Auf der anderen Membranseite treten sie wieder aus.</li>
- </ol>
- <p>Der Transport erfolgt durch Diffusion und benötigt keine zusätzliche
- Energiezufuhr durch ATP.</p>
- `,
- extra:`
- <h3>Besonderheit der Aquaporine</h3>
- <p>Die Wasserkanäle sind sehr effizient. Laut Schulbuch können
- Milliarden Wassermoleküle pro Sekunde einen solchen Kanal passieren.</p>
- <div class="highlight">Aquaporine erleichtern den Wassertransport,
- ohne dass die Membran für alle anderen Stoffe geöffnet wird.</div>
- <h3>Fachbegriffe</h3>
- <ul>
- <li><b>Aquaporin:</b> Kanalprotein für Wasser.</li>
- <li><b>Diffusion:</b> Bewegung von Teilchen entlang ihres Konzentrationsgefälles.</li>
- <li><b>Kanalprotein:</b> Protein, das einen Durchgang durch die Membran bildet.</li>
- </ul>
- `,
- build() {
-   membrane();
-   protein(0,"#e99d4c",1.15);
-   particles(18,cyan,3,2.1);
-   arrow([0,2,0],[0,-2,0],"#42d9e8");
-   textLabel("Aquaporin",2.1,0.3,0,"#ffbd76");
-   textLabel("Wasser",2.1,1.7,0,"#42d9e8");
-   textLabel("Wassertransport",0,-2,1,"#42d9e8");
- }
+active:{
+  title:"ATP und aktiver Transport",
+  tag:"ABSCHNITT 3.6",
+  steps:[
+    "Beim aktiven Transport wird ein Stoff gegen sein Konzentrationsgefälle bewegt.",
+    "Ein Transportprotein bindet den zu transportierenden Stoff.",
+    "ATP wird unter Beteiligung von Wasser zu ADP und Phosphat gespalten. Dabei wird Energie frei.",
+    "Die Energie ermöglicht eine Veränderung des Transportproteins und damit den Transport gegen das Konzentrationsgefälle."
+  ],
+  description:`
+    <h3>Transport gegen das Konzentrationsgefälle</h3>
+    <p>Beim <span class="term">aktiven Transport</span> werden Stoffe
+    gegen ihr Konzentrationsgefälle transportiert.</p>
+    <p>Ein Stoff wird dabei von einem Bereich niedrigerer Konzentration
+    in einen Bereich höherer Konzentration befördert.</p>
+  `,
+  details:`
+    <h3>Woher kommt die Energie?</h3>
+    <p>Der Transport benötigt Energie. Diese kann durch die Spaltung
+    von ATP bereitgestellt werden.</p>
+    <p>Bei der <span class="term">ATP-Hydrolyse</span> wird ATP unter
+    Beteiligung von Wasser zu ADP und anorganischem Phosphat
+    umgewandelt. Dabei wird Energie frei.</p>
+    <div class="highlight">ATP + Wasser → ADP + Phosphat + Energie</div>
+  `,
+  terms:`
+    <h3>Fachbegriffe</h3>
+    <ul>
+      <li><b>Aktiver Transport:</b> Transport gegen das Konzentrationsgefälle unter Energieverbrauch.</li>
+      <li><b>ATP:</b> Molekül, das Energie bereitstellen kann.</li>
+      <li><b>ADP:</b> entsteht bei der Abspaltung eines Phosphats von ATP.</li>
+      <li><b>ATP-Hydrolyse:</b> Spaltung von ATP unter Beteiligung von Wasser.</li>
+      <li><b>Phosphat:</b> anorganischer Phosphatrest.</li>
+    </ul>
+  `,
+  build() {
+    buildMembrane();
+    buildProtein(0,1.1);
+
+    label("Transportprotein",2,0.3,0,"#ffbd76");
+    label("ATP",2,2,0,"#80e2a4");
+    label("ADP + Phosphat",2,-1.8,0,"#80e2a4");
+
+    arrow([0,-1.9,0],[0,1.9,0],"#ff789b");
+
+    for(let i=0;i<9;i++) {
+      addParticle(-3.8+i*0.9,-2.2,0,materials.glucose,0.1);
+    }
+  }
 },
 
-channel: {
- title:"Ionenkanäle",
- tag:"ABSCHNITT 3.5",
- description:`
- <h3>Erleichterte Diffusion durch Kanäle</h3>
- <p>Bestimmte Ionen können die hydrophobe Membran nicht einfach
- durchqueren. Dafür gibt es <span class="term">Ionenkanäle</span>.</p>
- <p>Diese Kanalproteine ermöglichen bestimmten Ionen den Durchtritt
- durch die Membran.</p>
- `,
- details:`
- <h3>Selektivität und Steuerung</h3>
- <p>Ionenkanäle sind selektiv: Sie lassen nur bestimmte Ionen passieren.
- Manche Kanäle können durch ein elektrisches oder chemisches Signal
- geöffnet oder geschlossen werden.</p>
- <p>Beispiele für Ionen, die durch entsprechende Kanäle transportiert
- werden können, sind Natrium- und Kalium-Ionen.</p>
- <div class="highlight">Ein geöffneter Ionenkanal ermöglicht den
- passiven Transport entlang des Konzentrationsgefälles.</div>
- `,
- extra:`
- <h3>Fachbegriffe</h3>
- <ul>
- <li><b>Ion:</b> elektrisch geladenes Teilchen.</li>
- <li><b>Ionenkanal:</b> selektives Kanalprotein für bestimmte Ionen.</li>
- <li><b>Selektivität:</b> bestimmte Stoffe werden bevorzugt durchgelassen.</li>
- <li><b>Konzentrationsgefälle:</b> Unterschied der Konzentration
- zwischen zwei Bereichen.</li>
- </ul>
- `,
- build() {
-   membrane();
-   protein(0,"#e99d4c",1.1);
-   particles(17,green,3,2.1);
-   arrow([0,2,0],[0,-2,0],"#7de0a3");
-   textLabel("Ionenkanal",2.1,0.4,0,"#ffbd76");
-   textLabel("Ionen",2.1,1.7,0,"#7de0a3");
-   textLabel("Konzentrationsgefälle",0,-2,1,"#7de0a3");
- }
+transport:{
+  title:"Uniport, Symport und Antiport",
+  tag:"ABSCHNITT 3.6",
+  steps:[
+    "Beim Uniport wird eine einzige Stoffart durch ein Transportprotein bewegt.",
+    "Beim Symport werden zwei unterschiedliche Stoffarten gleichzeitig in dieselbe Richtung transportiert.",
+    "Beim Antiport werden zwei unterschiedliche Stoffarten gleichzeitig in entgegengesetzte Richtungen transportiert.",
+    "Die Begriffe beschreiben die Anzahl der Stoffarten und die Transportrichtung."
+  ],
+  description:`
+    <h3>Drei Transportformen</h3>
+    <p>Transportproteine können Stoffe auf unterschiedliche Weise
+    durch eine Membran befördern.</p>
+    <ul>
+      <li><b>Uniport:</b> Eine Stoffart wird transportiert.</li>
+      <li><b>Symport:</b> Zwei Stoffarten werden in dieselbe Richtung transportiert.</li>
+      <li><b>Antiport:</b> Zwei Stoffarten werden in entgegengesetzte Richtungen transportiert.</li>
+    </ul>
+  `,
+  details:`
+    <h3>Die Unterschiede</h3>
+    <p>Beim Uniport bewegt sich nur eine Stoffart durch das Protein.</p>
+    <p>Beim Symport werden zwei Stoffarten gemeinsam in dieselbe
+    Richtung transportiert.</p>
+    <p>Beim Antiport werden zwei Stoffarten gleichzeitig in
+    entgegengesetzte Richtungen bewegt.</p>
+  `,
+  terms:`
+    <h3>Merke</h3>
+    <div class="highlight">
+      Uniport = eine Stoffart<br>
+      Symport = zwei Stoffarten, gleiche Richtung<br>
+      Antiport = zwei Stoffarten, entgegengesetzte Richtung
+    </div>
+    <p>Diese Begriffe beschreiben die Transportform. Sie legen allein
+    noch nicht fest, ob der Transport aktiv oder passiv ist.</p>
+  `,
+  build() {
+    buildMembrane();
+
+    buildProtein(-3,0.7);
+    buildProtein(0,0.7);
+    buildProtein(3,0.7);
+
+    label("UNIPORT",-3,2.1,0,"#ffbd76");
+    label("SYMPORT",0,2.1,0,"#ffbd76");
+    label("ANTIPORT",3,2.1,0,"#ffbd76");
+
+    sphere(-3,1.8,0,0.14,materials.glucose);
+    arrow([-3,1.4,0],[-3,-1.5,0],"#ff789b");
+
+    sphere(-0.2,1.8,0,0.14,materials.glucose);
+    sphere(0.2,1.8,0,0.14,materials.ion);
+    arrow([0,1.4,0],[0,-1.5,0],"#ff789b");
+
+    sphere(2.7,1.7,0,0.14,materials.glucose);
+    sphere(3.3,-1.7,0,0.14,materials.ion);
+    arrow([3,1.4,0],[3,-1.4,0],"#ff789b");
+    arrow([3.7,-1.4,0],[3.7,1.4,0],"#80e2a4");
+  }
 },
 
-carrier: {
- title:"Carrierproteine",
- tag:"ABSCHNITT 3.5",
- description:`
- <h3>Was machen Carrierproteine?</h3>
- <p><span class="term">Carrierproteine</span> transportieren größere
- Moleküle oder Ionen durch die Biomembran.</p>
- <p>Das zu transportierende Molekül bindet zunächst an eine passende
- Bindungsstelle des Proteins – ähnlich wie ein Schlüssel in ein Schloss.</p>
- `,
- details:`
- <h3>Transport Schritt für Schritt</h3>
- <ol>
- <li>Das passende Molekül bindet an die Bindungsstelle.</li>
- <li>Das Protein verändert seine räumliche Struktur.</li>
- <li>Das gebundene Molekül wird auf die andere Membranseite gebracht.</li>
- <li>Das Molekül wird freigesetzt.</li>
- <li>Das Carrierprotein kehrt in seine ursprüngliche Form zurück.</li>
- </ol>
- `,
- extra:`
- <h3>Beispiel: Glucose</h3>
- <p>Ein Beispiel ist der Transport von Glucose durch die Membran
- von roten Blutzellen. Steigt der Blutzuckerspiegel, kann Glucose
- entlang ihres Konzentrationsgefälles in die Zellen gelangen.</p>
- <p>Dieser Vorgang ist eine Form der erleichterten Diffusion.</p>
- <div class="highlight">Carrierproteine besitzen eine Bindungsstelle
- und verändern während des Transports ihre Form.</div>
- <h3>Fachbegriffe</h3>
- <ul>
- <li><b>Carrier:</b> Transportprotein mit Bindungsstelle.</li>
- <li><b>Bindungsstelle:</b> Bereich, an den ein bestimmtes Molekül bindet.</li>
- <li><b>Strukturänderung:</b> Veränderung der räumlichen Form eines Proteins.</li>
- </ul>
- `,
- build() {
-   membrane();
-   const p=protein(0,"#f0a34d",1.25);
-   sphere(0,1.8,0,0.18,pink);
-   arrow([0,1.6,0],[0,0.8,0],"#ff779c");
-   arrow([0,-0.8,0],[0,-1.8,0],"#ff779c");
-   textLabel("Bindungsstelle",2.1,1.1,0,"#ffbd76");
-   textLabel("Glucose",1.8,2,0,"#ff779c");
-   textLabel("Formänderung",2,-1.2,0,"#ffbd76");
-   p.rotation.z=0.08;
- }
-},
+plant:{
+  title:"Nitrattransport in Pflanzenwurzeln",
+  tag:"ABSCHNITT 3.6",
+  steps:[
+    "Pflanzen benötigen Nitrat-Ionen als wichtigen Mineralstoff. Die Konzentration im Bodenwasser kann geringer sein als in den Pflanzenzellen.",
+    "Eine Protonenpumpe transportiert H⁺-Ionen unter Verbrauch von ATP aus der Pflanzenwurzelzelle nach außen.",
+    "Dadurch entsteht außen eine höhere Protonenkonzentration. Es bildet sich ein Protonengefälle.",
+    "Protonen strömen anschließend entlang ihres Gefälles durch einen Nitrat-Carrier zurück. Gleichzeitig wird Nitrat in die Zelle aufgenommen."
+  ],
+  description:`
+    <h3>Nitrataufnahme in Pflanzenwurzeln</h3>
+    <p>Pflanzen benötigen Nitrat-Ionen (NO₃⁻) als wichtigen Mineralstoff.
+    Die Konzentration dieser Ionen im Bodenwasser kann deutlich
+    niedriger sein als in den Pflanzenzellen.</p>
+    <p>Die Pflanze muss Nitrat daher gegen sein Konzentrationsgefälle
+    aufnehmen können.</p>
+  `,
+  details:`
+    <h3>Schritt 1: Protonenpumpe</h3>
+    <p>Eine Protonenpumpe transportiert H⁺-Ionen unter Verbrauch
+    von ATP aus der Pflanzenwurzelzelle nach außen.</p>
+    <p>Dadurch entsteht außen eine höhere Protonenkonzentration:
+    ein Protonengefälle.</p>
+    <h3>Schritt 2: Nitrat-Carrier</h3>
+    <p>Die Protonen können entlang ihres Gefälles zurück in die Zelle
+    strömen. Dabei nutzen sie einen Nitrat-Carrier.</p>
+    <p>Gleichzeitig wird Nitrat in die Zelle aufgenommen.
+    Laut Abbildung werden zwei Protonen gemeinsam mit einem
+    Nitrat-Ion transportiert.</p>
+  `,
+  terms:`
+    <h3>Warum ist das sekundär aktiver Transport?</h3>
+    <p>Die Protonenpumpe baut mithilfe von ATP ein Protonengefälle auf.
+    Der Nitrat-Carrier nutzt anschließend die Energie dieses Gefälles.</p>
+    <div class="highlight">
+      Protonenpumpe = primär aktiver Transport<br>
+      Nitrat-Carrier = sekundär aktiver Transport
+    </div>
+    <h3>Fachbegriffe</h3>
+    <ul>
+      <li><b>Proton:</b> positiv geladenes Wasserstoff-Ion (H⁺).</li>
+      <li><b>Protonengefälle:</b> Unterschied der Protonenkonzentration zwischen zwei Seiten.</li>
+      <li><b>Primär aktiver Transport:</b> Energie wird direkt durch ATP bereitgestellt.</li>
+      <li><b>Sekundär aktiver Transport:</b> Energie eines zuvor aufgebauten Konzentrationsgefälles wird genutzt.</li>
+      <li><b>Nitrat-Ion:</b> negativ geladenes Ion NO₃⁻.</li>
+      <li><b>Symport:</b> zwei Stoffarten werden in dieselbe Richtung transportiert.</li>
+    </ul>
+  `,
+  build() {
+    buildMembrane();
 
-active: {
- title:"Aktiver Transport",
- tag:"ABSCHNITT 3.6",
- description:`
- <h3>Transport gegen das Konzentrationsgefälle</h3>
- <p>Beim aktiven Transport werden Stoffe gegen ihr
- <span class="term">Konzentrationsgefälle</span> transportiert.</p>
- <p>Das bedeutet: Ein Stoff wird von einem Bereich mit niedrigerer
- Konzentration in einen Bereich mit höherer Konzentration befördert.</p>
- `,
- details:`
- <h3>Woher kommt die Energie?</h3>
- <p>Der Transport benötigt Energie. Häufig wird diese durch die
- Spaltung von ATP bereitgestellt.</p>
- <p>Bei der ATP-Hydrolyse wird ATP zu ADP und anorganischem Phosphat
- umgewandelt. Dabei wird Energie frei.</p>
- <p>Diese Energie wird genutzt, um das Transportprotein umzuwandeln
- und den Stofftransport gegen das Konzentrationsgefälle zu ermöglichen.</p>
- `,
- extra:`
- <h3>ATP-Hydrolyse</h3>
- <div class="highlight">
- ATP + Wasser → ADP + Phosphat + Energie
- </div>
- <p>Die Energie aus diesem Vorgang ermöglicht die Veränderung des
- Transportproteins.</p>
- <h3>Fachbegriffe</h3>
- <ul>
- <li><b>Aktiver Transport:</b> Transport gegen das Konzentrationsgefälle
- unter Energieverbrauch.</li>
- <li><b>ATP:</b> energiereiches Molekül, das Energie bereitstellen kann.</li>
- <li><b>ADP:</b> entsteht bei der Abspaltung eines Phosphats von ATP.</li>
- <li><b>ATP-Hydrolyse:</b> Spaltung von ATP unter Beteiligung von Wasser.</li>
- </ul>
- `,
- build() {
-   membrane();
-   protein(0,"#e99d4c",1.15);
-   particles(18,pink,3,-2.1);
-   arrow([0,-1.8,0],[0,1.8,0],"#ff779c");
-   sphere(2.1,1.4,0,0.3,green);
-   textLabel("ATP",2.1,2.1,0,"#7de0a3");
-   textLabel("ADP + P",2.2,0.7,0,"#7de0a3");
-   textLabel("Transport gegen das Gefälle",0,-2.2,1,"#ff779c");
- }
-},
+    buildProtein(-1.9,0.8);
+    buildProtein(1.9,0.8);
 
-types: {
- title:"Uniport, Symport und Antiport",
- tag:"ABSCHNITT 3.6",
- description:`
- <h3>Drei Transportformen</h3>
- <p>Transportproteine können Stoffe auf unterschiedliche Weise
- durch eine Membran befördern.</p>
- <ul>
- <li><b>Uniport:</b> Eine einzige Substanz wird transportiert.</li>
- <li><b>Symport:</b> Zwei verschiedene Substanzen werden gleichzeitig
- in dieselbe Richtung transportiert.</li>
- <li><b>Antiport:</b> Zwei verschiedene Substanzen werden gleichzeitig
- in entgegengesetzte Richtungen transportiert.</li>
- </ul>
- `,
- details:`
- <h3>Die Unterschiede</h3>
- <p>Beim Uniport bewegt sich nur eine Stoffart durch das Protein.</p>
- <p>Beim Symport werden zwei Stoffarten gemeinsam in dieselbe Richtung
- transportiert.</p>
- <p>Beim Antiport werden zwei Stoffarten gleichzeitig in
- entgegengesetzte Richtungen bewegt.</p>
- `,
- extra:`
- <h3>Merke</h3>
- <div class="highlight">
- Uniport = eine Stoffart<br>
- Symport = zwei Stoffarten, gleiche Richtung<br>
- Antiport = zwei Stoffarten, entgegengesetzte Richtung
- </div>
- <p>Diese Begriffe beschreiben die Anzahl und die Richtung der
- transportierten Stoffe. Sie sagen allein noch nicht aus, ob der
- Transport aktiv oder passiv ist.</p>
- `,
- build() {
-   membrane();
-   protein(-3,"#e99d4c",0.75);
-   protein(0,"#e99d4c",0.75);
-   protein(3,"#e99d4c",0.75);
+    label("Protonenpumpe",-1.9,2.1,0,"#ffbd76");
+    label("Nitrat-Carrier",1.9,2.1,0,"#ffbd76");
 
-   sphere(-3,1.4,0,0.14,pink);
-   arrow([-3,1.1,0],[-3,-1.3,0],"#ff779c");
+    label("H⁺", -3.8,1.5,0,"#42d9e8");
+    label("NO₃⁻",3.8,-1.5,0,"#80e2a4");
 
-   sphere(-0.25,1.4,0,0.14,pink);
-   sphere(0.25,1.4,0,0.14,green);
-   arrow([0,1.1,0],[0,-1.3,0],"#ff779c");
+    arrow([-1.9,-1.5,0],[-1.9,1.5,0],"#42d9e8");
+    arrow([1.9,1.5,0],[1.9,-1.5,0],"#80e2a4");
 
-   sphere(2.7,1.4,0,0.14,pink);
-   sphere(3.3,-1.4,0,0.14,green);
-   arrow([3,1.1,0],[3,-1.1,0],"#ff779c");
-   arrow([3.6,-1.1,0],[3.6,1.1,0],"#7de0a3");
-
-   textLabel("UNIPORT",-3,2.1,0,"#ffbd76");
-   textLabel("SYMPORT",0,2.1,0,"#ffbd76");
-   textLabel("ANTIPORT",3,2.1,0,"#ffbd76");
- }
-},
-
-plant: {
- title:"Nitrattransport in Pflanzenwurzeln",
- tag:"ABSCHNITT 3.6",
- description:`
- <h3>Beispiel aus Pflanzenwurzelzellen</h3>
- <p>Pflanzen benötigen unter anderem Nitrat-Ionen (NO₃⁻).
- Die Konzentration von Nitrat im Bodenwasser kann geringer sein
- als in der Pflanzenzelle.</p>
- <p>Damit die Pflanze trotzdem Nitrat aufnehmen kann, muss es
- gegen sein Konzentrationsgefälle transportiert werden.</p>
- `,
- details:`
- <h3>Schritt 1: Protonenpumpe</h3>
- <p>Eine Protonenpumpe transportiert H⁺-Ionen unter Verbrauch
- von ATP aus der Pflanzenwurzelzelle nach außen.</p>
- <p>Dadurch entsteht außen eine höhere Konzentration an Protonen.
- Es bildet sich ein Protonengefälle.</p>
- <h3>Schritt 2: Nitrat-Carrier</h3>
- <p>Die Protonen können anschließend entlang ihres Gefälles
- zurück in die Zelle strömen. Dabei nutzen sie einen Nitrat-Carrier.</p>
- <p>Der Carrier transportiert gleichzeitig Nitrat-Ionen in die Zelle.
- Laut Abbildung werden dabei zwei Protonen gemeinsam mit einem
- Nitrat-Ion aufgenommen.</p>
- `,
- extra:`
- <h3>Warum ist das sekundär aktiver Transport?</h3>
- <p>Die Energie stammt indirekt aus dem zuvor aufgebauten
- Protonengefälle. Der Nitrattransport ist mit dem Rückstrom der
- Protonen gekoppelt.</p>
- <p>Die Protonenpumpe benötigt ATP direkt. Der Nitrat-Carrier nutzt
- dagegen das vorhandene Protonengefälle.</p>
- <div class="highlight">
- Protonenpumpe = primär aktiver Transport<br>
- Nitrat-Carrier = sekundär aktiver Transport
- </div>
- <h3>Fachbegriffe</h3>
- <ul>
- <li><b>Proton:</b> positiv geladenes Wasserstoff-Ion (H⁺).</li>
- <li><b>Protonengefälle:</b> Unterschied der Protonenkonzentration
- zwischen zwei Seiten.</li>
- <li><b>Primär aktiv:</b> Energie wird direkt durch ATP bereitgestellt.</li>
- <li><b>Sekundär aktiv:</b> Energie eines zuvor aufgebauten
- Konzentrationsgefälles wird genutzt.</li>
- <li><b>Nitrat-Ion:</b> negativ geladenes Ion NO₃⁻.</li>
- </ul>
- `,
- build() {
-   membrane();
-   protein(-1.8,"#e99d4c",0.85);
-   protein(1.8,"#e99d4c",0.85);
-
-   for(let i=0;i<8;i++) {
-     sphere(-3.8+i*0.45,1.7,0,0.1,cyan);
-     sphere(0.4+i*0.4,-1.7,0,0.12,green);
-   }
-
-   arrow([-1.8,-1.5,0],[-1.8,1.5,0],"#42d9e8");
-   arrow([1.8,1.5,0],[1.8,-1.5,0],"#7de0a3");
-
-   textLabel("Protonenpumpe",-1.8,2.1,0,"#ffbd76");
-   textLabel("Nitrat-Carrier",1.8,2.1,0,"#ffbd76");
-   textLabel("H⁺", -3.2,1.2,0,"#42d9e8");
-   textLabel("NO₃⁻",3.2,-1.2,0,"#7de0a3");
- }
+    for(let i=0;i<6;i++) {
+      sphere(-4.4+i*0.35,1.7,0,0.11,materials.water);
+      sphere(3.0+i*0.3,-1.7,0,0.12,materials.ion);
+    }
+  }
 }
 
 };
 
-/* --------------------------------
-   STATION WECHSELN
--------------------------------- */
+/* ==========================================
+   5. STATION LADEN
+========================================== */
 
 function loadStation(id) {
-  current=id;
-  const s=stations[id];
+  currentStation=id;
+  currentStep=0;
+  playing=false;
+
+  document.getElementById("play").textContent="▶ Animation starten";
+
   clearScene();
 
-  document.getElementById("stationTitle").textContent=s.title;
-  document.getElementById("stationTag").textContent=s.tag;
+  const s=stations[id];
 
-  document.getElementById("info").innerHTML=`
+  document.getElementById("title").textContent=s.title;
+  document.getElementById("tag").textContent=s.tag;
+
+  document.getElementById("information").innerHTML=`
     <article class="card">${s.description}</article>
     <article class="card">${s.details}</article>
-    <article class="card full">${s.extra}</article>
+    <article class="card full">${s.terms}</article>
   `;
 
   s.build();
 
-  controls.target.set(0,0,0);
-  camera.position.set(8,7,10);
-  controls.update();
+  objects.forEach(o=>{
+    if(o.userData.isLabel) o.visible=labelsVisible;
+  });
 
-  document.querySelectorAll(".navbtn").forEach(btn=>{
-    btn.classList.toggle("active",btn.dataset.id===id);
+  document.querySelectorAll(".navbtn").forEach(button=>{
+    button.classList.toggle("active",button.dataset.id===id);
+  });
+
+  resetCamera();
+  updateStep();
+}
+
+/* ==========================================
+   6. SCHRITT-FÜR-SCHRITT-FUNKTION
+========================================== */
+
+function updateStep() {
+  const s=stations[currentStation];
+  const step=s.steps[currentStep];
+
+  document.getElementById("stepTitle").textContent=
+    "Schritt "+(currentStep+1);
+
+  document.getElementById("stepCounter").textContent=
+    "Schritt "+(currentStep+1)+" von "+s.steps.length;
+
+  document.getElementById("stepText").textContent=step;
+
+  document.getElementById("previous").disabled=currentStep===0;
+  document.getElementById("next").disabled=currentStep===s.steps.length-1;
+
+  document.getElementById("previous").style.opacity=
+    currentStep===0?"0.4":"1";
+
+  document.getElementById("next").style.opacity=
+    currentStep===s.steps.length-1?"0.4":"1";
+}
+
+function nextStep() {
+  if(currentStep<stations[currentStation].steps.length-1) {
+    currentStep++;
+    updateStep();
+    animateStep();
+  }
+}
+
+function previousStep() {
+  if(currentStep>0) {
+    currentStep--;
+    updateStep();
+    animateStep();
+  }
+}
+
+document.getElementById("next").onclick=nextStep;
+document.getElementById("previous").onclick=previousStep;
+
+/* ==========================================
+   7. ANIMATIONEN
+========================================== */
+
+function animateStep() {
+  const time=performance.now()*0.001;
+
+  animatedObjects.forEach(item=>{
+    if(item.rotation) {
+      item.object.rotation.z=item.amount*(currentStep>=item.activeFrom?1:0);
+    }
   });
 }
 
-document.querySelectorAll(".navbtn").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    animationOn=false;
-    document.getElementById("animate").textContent="▶ Animation starten";
-    loadStation(btn.dataset.id);
+document.getElementById("play").onclick=()=>{
+  playing=!playing;
+  document.getElementById("play").textContent=
+    playing?"Ⅱ Animation stoppen":"▶ Animation starten";
+};
+
+function updateAnimations(delta) {
+  if(!playing) return;
+
+  animatedObjects.forEach(item=>{
+    if(item.rotation) {
+      const target=currentStep>=item.activeFrom?item.amount:0;
+      item.object.rotation.z+=
+        (target-item.object.rotation.z)*Math.min(delta*2,1);
+      return;
+    }
+
+    if(currentStep<item.activeFrom) {
+      item.object.position.y=item.startY;
+      return;
+    }
+
+    item.object.position.y-=item.speed*delta;
+
+    if(item.object.position.y<item.endY) {
+      item.object.position.y=item.startY;
+    }
+  });
+
+  if(currentStation==="carrier") {
+    const proteinObject=objects.find(o=>o.userData.isProtein);
+    if(proteinObject) {
+      proteinObject.rotation.z=Math.sin(performance.now()*0.0015)*0.12;
+    }
+  }
+}
+
+/* ==========================================
+   8. BEDIENUNG
+========================================== */
+
+document.querySelectorAll(".navbtn").forEach(button=>{
+  button.addEventListener("click",()=>{
+    loadStation(button.dataset.id);
   });
 });
 
-/* --------------------------------
-   BEDIENUNG
--------------------------------- */
-
 document.getElementById("reset").onclick=()=>{
-  camera.position.set(8,7,10);
-  controls.target.set(0,0,0);
-  controls.update();
+  resetCamera();
 };
 
-let labelsVisible=true;
 document.getElementById("labels").onclick=()=>{
   labelsVisible=!labelsVisible;
-  labels.forEach(l=>l.visible=labelsVisible);
+
+  objects.forEach(o=>{
+    if(o.userData.isLabel) o.visible=labelsVisible;
+  });
+
+  document.getElementById("labels").textContent=
+    labelsVisible?"Beschriftungen ausblenden":"Beschriftungen einblenden";
 };
 
-document.getElementById("animate").onclick=()=>{
-  animationOn=!animationOn;
-  document.getElementById("animate").textContent=
-    animationOn?"Ⅱ Animation stoppen":"▶ Animation starten";
-};
-
-/* --------------------------------
-   GRÖSSE UND ANIMATION
--------------------------------- */
+/* ==========================================
+   9. RESPONSIVE GRÖSSE UND RENDERING
+========================================== */
 
 function resize() {
-  const w=canvas.clientWidth;
-  const h=canvas.clientHeight;
-  if(!w || !h) return;
-  camera.aspect=w/h;
-  camera.updateProjectionMatrix();
-  renderer.setSize(w,h,false);
-}
+  const width=canvas.clientWidth;
+  const height=canvas.clientHeight;
 
-window.addEventListener("resize",resize);
+  if(!width||!height) return;
+
+  camera.aspect=width/height;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(width,height,false);
+}
 
 const observer=new ResizeObserver(resize);
 observer.observe(canvas);
 
-function render() {
+window.addEventListener("resize",resize);
+
+let previousTime=performance.now();
+
+function render(now) {
   requestAnimationFrame(render);
+
+  const delta=Math.min((now-previousTime)/1000,0.05);
+  previousTime=now;
+
   controls.update();
-
-  if(animationOn) {
-    const t=performance.now()*0.001;
-
-    objects.forEach((obj,i)=>{
-      if(obj.isGroup && current==="carrier") {
-        obj.rotation.z=Math.sin(t*1.3)*0.12;
-      }
-    });
-
-    moving.forEach(p=>{
-      p.obj.position.y-=p.speed*4;
-      if(p.obj.position.y<p.min) {
-        p.obj.position.y=p.max;
-      }
-    });
-  }
+  updateAnimations(delta);
 
   renderer.render(scene,camera);
 }
 
+/* ==========================================
+   10. START
+========================================== */
+
 loadStation("membrane");
 resize();
-render();
+requestAnimationFrame(render);
 
 </script>
 </body>
